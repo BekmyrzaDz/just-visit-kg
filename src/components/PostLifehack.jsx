@@ -1,16 +1,19 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import yssykkyl from "../assets/images/yssyk-kuls_photos.jpg";
+import yssykkyl from "../assets/images/yssyk-kuls-lifehack.jpg";
 import dot1 from "../assets/images/Ellipse 1.svg";
 import dot2 from "../assets/images/Ellipse 2.svg";
 import dot3 from "../assets/images/Ellipse 3.svg";
 import dot4 from "../assets/images/Ellipse 4.svg";
 import dot5 from "../assets/images/Ellipse 5.svg";
 import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const PostLifehack = () => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", marginBottom: "17px" }}
+    >
       <Typography
         variant="h2"
         sx={{
@@ -45,11 +48,13 @@ const PostLifehack = () => {
         </Box>
       </Box>
       <Typography sx={{ fontSize: "20px", color: "#fff" }}>
-        Лазурный Иссык-Куль - краса и гордость киргизской земли, величественно
-        раскинулся между двумя хребтами - Кунгей Алатау и Терскей Алатау.
-        Несколько тысяч лет назад этих гор не было. На их месте расстилалась
-        ....
+        С каждым годом всё больше людей выбирают активный отдых на природе и
+        отправляются в многодневный поход. Залогом любого успешного похода
+        является правильно собранный рюкзак, куда вы....
       </Typography>
+      <Box>
+        <Link>Развернуть</Link>
+      </Box>
     </Box>
   );
 };

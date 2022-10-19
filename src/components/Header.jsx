@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/logo-justvisit.svg";
 import {
   AppBar,
   Avatar,
@@ -14,21 +14,23 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const ButtonCompoent = styled(Button)(() => ({
+const ButtonCompoent = styled(NavLink)(() => ({
   fontFamily: "Oswald",
-  color: "#000",
-  background: "none",
   borderRadius: "20px",
-  border: "1px solid #000000",
+  border: "1px solid #000",
   fontSize: "20px",
+  padding: "8px 14px",
   lineHeight: "24px",
+  color: "#000",
+  background: "#D8AD83",
+  textDecoration: "none",
   // "&:hover": {
-  //   background: "#1E2431",
-  //   color: "#fff",
-  //   border: "1px solid #A97155",
+  //   background: "#D8AD83",
+  //   color: "#000",
+  //   border: "1px solid #000",
   // },
 }));
 
@@ -42,7 +44,6 @@ const Header = () => {
   return (
     <AppBar position="static" sx={{ background: "#1E2431" }}>
       <Container maxWidth="xl">
-        {/* <Toolbar> */}
         <Box
           sx={{
             display: "flex",
@@ -50,39 +51,16 @@ const Header = () => {
             alignItems: "center",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
+          <Box>
             <Link to="/">
               <Tooltip>
                 <IconButton>
-                  {/* <img
-                    style={{ width: "100px", height: "100px" }}
-                    src={logo}
-                    alt=""
-                  /> */}
-                  <Avatar sx={{}} src={logo} alt="" />
+                  <img src={logo} alt="" />
+                  {/* <Avatar src={logo} alt="" /> */}
                 </IconButton>
               </Tooltip>
             </Link>
-            <Typography
-              variant="h5"
-              component="a"
-              style={{
-                fontFamily: "Oswald",
-                fontWeight: 400,
-                fontSize: 20,
-                color: "#D8AD83",
-              }}
-            >
-              JustVisit.kg
-            </Typography>
           </Box>
-
           <Box
             sx={{
               display: "flex",
@@ -93,6 +71,7 @@ const Header = () => {
               <TypographyComponent
                 sx={{
                   fonntFamily: "Oswald",
+                  fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
                 }}
@@ -105,6 +84,7 @@ const Header = () => {
               <TypographyComponent
                 sx={{
                   fonntFamily: "Oswald",
+                  fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
                 }}
@@ -117,6 +97,7 @@ const Header = () => {
               <TypographyComponent
                 sx={{
                   fonntFamily: "Oswald",
+                  fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
                 }}
@@ -129,6 +110,7 @@ const Header = () => {
               <TypographyComponent
                 sx={{
                   fonntFamily: "Oswald",
+                  fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
                 }}
@@ -141,6 +123,7 @@ const Header = () => {
               <TypographyComponent
                 sx={{
                   fonntFamily: "Oswald",
+                  fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
                 }}
@@ -149,11 +132,6 @@ const Header = () => {
                 Зарегистрироваться
               </TypographyComponent>
             </MenuItem>
-            {/* {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))} */}
           </Box>
           <Box
             sx={{
@@ -161,23 +139,9 @@ const Header = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Button
-              sx={{
-                fontFamily: "Oswald",
-                color: "#000",
-                background: "#D8AD83",
-                borderRadius: "20px",
-                border: "1px solid #000000",
-                fontSize: 20,
-                textTransform: "none",
-              }}
-              variant="contained"
-            >
-              Войти
-            </Button>
+            <ButtonCompoent variant="contained">Войти</ButtonCompoent>
           </Box>
         </Box>
-        {/* </Toolbar> */}
       </Container>
     </AppBar>
   );

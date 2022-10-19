@@ -1,34 +1,68 @@
 @font-face {
-  font-family: 'Oswald';
+  font-family: Oswald;
   src: url('./assets/fonts/Oswald-Bold.ttf') format('ttf');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
+  font-family: Oswald;
   src: url('./assets/fonts/Oswald-Medium.ttf') format('ttf');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oswald';
+  font-family: Oswald;
   src: url('./assets/fonts/Oswald-Regular.ttf') format('ttf');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-display: swap;
+}
+
+@font-face {
+  font-family: Material Sans;
+  src: url('./assets/fonts/Material_Sans.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --dark-blue: #1E2431;
+  --white: #FCEEE3;
+  --brown: #A97155;
+  --light-brown: #D8AD83;
+  --black: #000;
 }
 
 body {
   margin: 0;
-  font-family: "Oswald", sans-serif;
-  /* background: "#1E2431"; */
+  font-family: "Oswald-Regular", sans-serif;
+}
+
+.link {
+  font-family: Oswald;
+  border-radius: 20px;
+  border: 1px solid var(--brown);
+  font-size: 20px;
+  padding: 10px 26px;
+  line-height: 24px;
+  color: var(--white);
+  background: var(--dark-blue);
+  text-decoration: none;
 }
 
 .active {
-  background-color: #D8AD83;
+  font-family: Oswald;
+  background: var(--light-brown);
   border-radius: 20px;
+  border: 1px solid var(--black);
+  font-size: 20px;
+  padding: 10px 26px;
+  line-height: 24px;
+  text-decoration: none;
+  color: var(--black);
 }

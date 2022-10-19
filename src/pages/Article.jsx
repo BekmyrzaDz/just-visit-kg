@@ -5,6 +5,11 @@ const Article = () => {
   return (
     <>
       <PostArticle />
+      <PostArticle />
+      <PostArticle />
+      <PostArticle />
+      <PostArticle />
+      <PostArticle />
     </>
   );
 };

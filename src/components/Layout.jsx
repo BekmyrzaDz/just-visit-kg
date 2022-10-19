@@ -1,26 +1,31 @@
 import React from "react";
+import "../index.css";
 import { Button, Container, Typography } from "@mui/material";
 import Header from "./Header";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "@mui/system";
 
-const ButtonCompoent = styled(Button)(() => ({
+const ButtonCompoent = styled(Link)(() => ({
   fontFamily: "Oswald",
-  color: "#000",
-  background: "#1E2431",
   borderRadius: "20px",
   border: "1px solid #A97155",
   fontSize: "20px",
+  padding: "10px 26px",
   lineHeight: "24px",
-  "&:hover": {
-    backgroundColor: "none`",
-    color: "#000",
-    border: "1px solid #000",
-  },
+  color: "#fff",
+  background: "#1E2431",
+  textDecoration: "none",
+  // "&:hover": {
+  //   background: "#D8AD83",
+  //   color: "#000",
+  //   border: "1px solid #000",
+  // },
 }));
 
 const Layout = () => {
+  const setActive = ({ isActive }) => (isActive ? "active" : "link");
+
   return (
     <>
       <Header />
@@ -28,16 +33,16 @@ const Layout = () => {
         <Container maxWidth="md">
           <Box sx={{ marginBottom: "50px" }}>
             <Typography
+              variant="h1"
+              component="h1"
               sx={{
                 fontFamily: "Oswald",
-                fontSize: "60px",
                 fontWeight: 500,
-                color: "#FCEEE3",
+                fontSize: "60px",
+                color: "var(--white)",
                 textAlign: "center",
                 marginBottom: "35px",
               }}
-              variant="h1"
-              component="h1"
             >
               Информационный портал для путешествия по Кыргызстану
             </Typography>
@@ -49,19 +54,8 @@ const Layout = () => {
                   marginRight: "10px",
                 }}
               >
-                <NavLink to="/articles" sx={{ textDecoration: "none" }}>
-                  <Button
-                    sx={{
-                      background: "none",
-                      borderRadius: 20,
-                      textTransform: "none",
-                      textDecoration: "none",
-                      border: "1px solid #A97155",
-                    }}
-                    variant="contained"
-                  >
-                    Статьи
-                  </Button>
+                <NavLink to="/articles" className={setActive}>
+                  Статьи
                 </NavLink>
               </Box>
               <Box
@@ -71,18 +65,8 @@ const Layout = () => {
                   marginRight: "10px",
                 }}
               >
-                <NavLink to="/lifehacks">
-                  <ButtonCompoent
-                    sx={{
-                      background: "none",
-                      borderRadius: 20,
-                      textTransform: "none",
-                      border: "1px solid #A97155",
-                    }}
-                    variant="contained"
-                  >
-                    Лайфхаки
-                  </ButtonCompoent>
+                <NavLink to="/lifehacks" className={setActive}>
+                  Лайфхаки
                 </NavLink>
               </Box>
               <Box
@@ -91,18 +75,8 @@ const Layout = () => {
                   justifyContent: "flex-end",
                 }}
               >
-                <NavLink to="/news">
-                  <ButtonCompoent
-                    sx={{
-                      background: "none",
-                      borderRadius: 20,
-                      textTransform: "none",
-                      border: "1px solid #A97155",
-                    }}
-                    variant="contained"
-                  >
-                    Новости
-                  </ButtonCompoent>
+                <NavLink to="/news" className={setActive}>
+                  Новости
                 </NavLink>
               </Box>
             </Box>
