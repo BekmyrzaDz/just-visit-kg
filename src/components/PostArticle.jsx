@@ -1,4 +1,5 @@
 import React from "react";
+import "../index.css";
 import yssykkyl from "../assets/images/yssyk-kuls_photos.jpg";
 import dot1 from "../assets/images/Ellipse 1.svg";
 import dot2 from "../assets/images/Ellipse 2.svg";
@@ -48,14 +49,27 @@ const PostArticle = () => {
             <img sx={{ width: "10px", height: "10px" }} src={dot5} alt="" />
           </Box>
         </Box>
-        <Typography sx={{ fontSize: "20px", color: "#fff" }}>
+        <Typography
+          sx={{ fontSize: "20px", color: "#fff", marginBottom: "20px" }}
+        >
           Лазурный Иссык-Куль - краса и гордость киргизской земли, величественно
           раскинулся между двумя хребтами - Кунгей Алатау и Терскей Алатау.
           Несколько тысяч лет назад этих гор не было. На их месте расстилалась
           ....
         </Typography>
-        <Box>
-          <Link>Развернуть</Link>
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Link
+            style={{
+              padding: "10px 20px",
+              textDecoration: "none",
+              borderRadius: "20px",
+              background: "var(--light-brown)",
+              color: "var(--black)",
+              fontSize: "16px",
+            }}
+          >
+            Развернуть
+          </Link>
         </Box>
       </Box>
     </>

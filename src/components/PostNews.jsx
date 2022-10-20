@@ -47,14 +47,27 @@ const PostNews = () => {
           <img sx={{ width: "10px", height: "10px" }} src={dot5} alt="" />
         </Box>
       </Box>
-      <Typography sx={{ fontSize: "20px", color: "#fff" }}>
+      <Typography
+        sx={{ fontSize: "20px", color: "#fff", marginBottom: "20px" }}
+      >
         Сегодня, 11 октября, в рамках госвизита Ильхама Алиева в Кыргызстан
         состоялось открытие Кыргызско-азербайджанского парка дружбы. Как
         сообщает администрация президента, в церемонии открытия приняли участие
         президент Кыргызстана....
       </Typography>
-      <Box>
-        <Link>Развернуть</Link>
+      <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Link
+          style={{
+            padding: "10px 20px",
+            textDecoration: "none",
+            borderRadius: "20px",
+            background: "var(--light-brown)",
+            color: "var(--black)",
+            fontSize: "16px",
+          }}
+        >
+          Развернуть
+        </Link>
       </Box>
     </Box>
   );

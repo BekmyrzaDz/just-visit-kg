@@ -47,13 +47,26 @@ const PostLifehack = () => {
           <img sx={{ width: "10px", height: "10px" }} src={dot5} alt="" />
         </Box>
       </Box>
-      <Typography sx={{ fontSize: "20px", color: "#fff" }}>
+      <Typography
+        sx={{ fontSize: "20px", color: "#fff", marginBottom: "20px" }}
+      >
         С каждым годом всё больше людей выбирают активный отдых на природе и
         отправляются в многодневный поход. Залогом любого успешного похода
         является правильно собранный рюкзак, куда вы....
       </Typography>
-      <Box>
-        <Link>Развернуть</Link>
+      <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Link
+          style={{
+            padding: "10px 20px",
+            textDecoration: "none",
+            borderRadius: "20px",
+            background: "var(--light-brown)",
+            color: "var(--black)",
+            fontSize: "16px",
+          }}
+        >
+          Развернуть
+        </Link>
       </Box>
     </Box>
   );
