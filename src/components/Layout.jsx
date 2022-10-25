@@ -6,7 +6,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "@mui/system";
 
-const ButtonCompoent = styled(Link)(() => ({
+const ButtonComponent = styled(Link)(() => ({
   fontFamily: "Oswald",
   borderRadius: "20px",
   border: "1px solid #A97155",
