@@ -6,7 +6,7 @@ import dot2 from "../assets/images/Ellipse 2.svg";
 import dot3 from "../assets/images/Ellipse 3.svg";
 import dot4 from "../assets/images/Ellipse 4.svg";
 import dot5 from "../assets/images/Ellipse 5.svg";
-import { Typography } from "@mui/material";
+import { Checkbox, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 
@@ -50,7 +50,13 @@ const PostArticle = () => {
           </Box>
         </Box>
         <Typography
-          sx={{ fontSize: "20px", color: "#fff", marginBottom: "20px" }}
+          sx={{
+            fontFamily: "Matrial Sans",
+            fontWeight: "400",
+            fontSize: "20px",
+            color: "#fff",
+            marginBottom: "20px",
+          }}
         >
           Лазурный Иссык-Куль - краса и гордость киргизской земли, величественно
           раскинулся между двумя хребтами - Кунгей Алатау и Терскей Алатау.
@@ -59,7 +65,10 @@ const PostArticle = () => {
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Link
+            to="/articles"
             style={{
+              fontFamily: "Material Sans",
+              fontWeight: "400",
               padding: "10px 20px",
               textDecoration: "none",
               borderRadius: "20px",

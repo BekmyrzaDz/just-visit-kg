@@ -48,7 +48,13 @@ const PostNews = () => {
         </Box>
       </Box>
       <Typography
-        sx={{ fontSize: "20px", color: "#fff", marginBottom: "20px" }}
+        sx={{
+          fontFamily: "Matrial Sans",
+          fontWeight: "400",
+          fontSize: "20px",
+          color: "#fff",
+          marginBottom: "20px",
+        }}
       >
         Сегодня, 11 октября, в рамках госвизита Ильхама Алиева в Кыргызстан
         состоялось открытие Кыргызско-азербайджанского парка дружбы. Как
@@ -57,7 +63,10 @@ const PostNews = () => {
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
         <Link
+          to="/news"
           style={{
+            fontFamily: "Matrial Sans",
+            fontWeight: "400",
             padding: "10px 20px",
             textDecoration: "none",
             borderRadius: "20px",

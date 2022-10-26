@@ -48,7 +48,13 @@ const PostLifehack = () => {
         </Box>
       </Box>
       <Typography
-        sx={{ fontSize: "20px", color: "#fff", marginBottom: "20px" }}
+        sx={{
+          fontFamily: "Matrial Sans",
+          fontWeight: "400",
+          fontSize: "20px",
+          color: "#fff",
+          marginBottom: "20px",
+        }}
       >
         С каждым годом всё больше людей выбирают активный отдых на природе и
         отправляются в многодневный поход. Залогом любого успешного похода
@@ -56,7 +62,10 @@ const PostLifehack = () => {
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
         <Link
+          to="/lifehacks"
           style={{
+            fontFamily: "Matrial Sans",
+            fontWeight: "400",
             padding: "10px 20px",
             textDecoration: "none",
             borderRadius: "20px",

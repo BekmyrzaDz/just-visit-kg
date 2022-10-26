@@ -81,6 +81,8 @@ const Layout = () => {
               </Box>
             </Box>
           </Box>
+        </Container>
+        <Container sx={{ width: "592px" }}>
           <Outlet />
         </Container>
       </main>
