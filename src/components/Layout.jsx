@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 import { Button, Container, Typography } from "@mui/material";
-import Header from "./Header";
+import Header from "./Header/Header";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "@mui/system";

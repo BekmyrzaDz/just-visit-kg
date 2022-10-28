@@ -1,9 +1,22 @@
-import logo from "../assets/images/logo-justvisit.svg";
-import {AppBar, Box, IconButton, MenuItem, Tooltip, Typography,} from "@mui/material";
+import { useState } from "react";
+import logo from "../../assets/images/logo-justvisit.svg";
+import {
+    AppBar,
+    Box, Button,
+    Dialog, DialogActions,
+    DialogContent, DialogContentText,
+    DialogTitle,
+    IconButton,
+    MenuItem, TextField,
+    Tooltip,
+    Typography,
+} from "@mui/material";
 import {Container} from "@mui/system";
 import React from "react";
 import {Link, NavLink} from "react-router-dom";
 import styled from "styled-components";
+import Authorization from "../../pages/Authorization/Authorization";
+import "./Header.css"
 
 const ButtonComponent = styled(NavLink)(() => ({
     fontFamily: "Oswald",
@@ -22,6 +35,7 @@ const ButtonComponent = styled(NavLink)(() => ({
     // },
 }));
 
+
 const TypographyComponent = styled(Typography)(() => ({
     "&:hover": {
         borderBottom: "1px solid #D8AD83",
@@ -29,6 +43,16 @@ const TypographyComponent = styled(Typography)(() => ({
 }));
 
 const Header = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return (
         <AppBar position="static" sx={{background: "#1E2431"}}>
             <Container maxWidth="l">
@@ -127,12 +151,30 @@ const Header = () => {
                             justifyContent: "flex-start",
                         }}
                     >
-                        <ButtonComponent variant="contained" to="/authorization">
+                        <ButtonComponent variant="contained" onClick={handleClickOpen}>
                             Войти
                         </ButtonComponent>
                     </Box>
                 </Box>
             </Container>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                PaperProps={{sx: {
+                    background: "transparent",
+                    boxShadow: "none",
+                    width: "600px",
+                    padding: "0"
+                }}}
+            >
+                <DialogContent sx={{
+                    width: "600px",
+                    padding: "0"
+                }}
+                >
+                    <Authorization/>
+                </DialogContent>
+            </Dialog>
         </AppBar>
     );
 };

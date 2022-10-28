@@ -29,7 +29,6 @@ function App() {
         <Route path="/articles" element={<Article />} />
         <Route path="/lifehacks" element={<Lifehack />} />
         <Route path="/news" element={<New />} />
-        <Route path="/authorization" element={<Authorization/>} />
       </Route>
     </Routes>
   );

@@ -1,4 +1,10 @@
 import { GoogleLogin } from "@leecheuk/react-google-login"
+import styled from "styled-components";
+
+
+const GoogleBtnComponent = styled(GoogleLogin)(() => ({
+
+}))
 
 function Login() {
 
@@ -11,14 +17,15 @@ function Login() {
     }
 
     return (
-        <div id="singInButton">
-            <GoogleLogin
+        <div id="singInButton" className="google-btn">
+            <GoogleBtnComponent
                 clientId={process.env.REACT_APP_CLIENT_ID}
                 buttonText=" Войти через Google"
                 onSuccess={onSucces}
                 onFailure={onFailure}
                 cookiePolicy={'single_host_origin'}
                 isSignedIn={true}
+                className="google-btn"
             />
         </div>
     )
