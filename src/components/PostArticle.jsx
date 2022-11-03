@@ -1,6 +1,10 @@
 import React from "react";
 import "../index.css";
-import yssykkyl from "../assets/images/yssyk-kuls_photos.jpg";
+import issyKyl1 from "../assets/images/issyk-kul-1.jpg";
+import issyKyl2 from "../assets/images/issyk-kul-2.jpg";
+import issyKyl3 from "../assets/images/issyk-kul-3.jpg";
+import issyKyl4 from "../assets/images/issyk-kul-4.jpg";
+import issyKyl5 from "../assets/images/issyk-kul-5.jpg";
 import dot1 from "../assets/images/Ellipse 1.svg";
 import dot2 from "../assets/images/Ellipse 2.svg";
 import dot3 from "../assets/images/Ellipse 3.svg";
@@ -9,8 +13,23 @@ import dot5 from "../assets/images/Ellipse 5.svg";
 import { Checkbox, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
+import ImageSlider from "./ImageSlider";
 
 const PostArticle = () => {
+  const slides = [
+    { url: issyKyl1, title: "Yssyk-Kyl" },
+    { url: issyKyl2, title: "Yssyk-Kyl" },
+    { url: issyKyl3, title: "Yssyk-Kyl" },
+    { url: issyKyl4, title: "Yssyk-Kyl" },
+    { url: issyKyl5, title: "Yssyk-Kyl" },
+  ];
+
+  const containerStyles = {
+    width: "592px",
+    height: "280px",
+    marginBottom: "35px",
+  };
+
   return (
     <>
       <Box
@@ -29,12 +48,15 @@ const PostArticle = () => {
         >
           Почему любят Ыссык-куль?
         </Typography>
-        <img
+        <Box sx={containerStyles}>
+          <ImageSlider slides={slides} />
+        </Box>
+        {/* <img
           style={{ marginBottom: "10px", borderRadius: "20px" }}
           src={yssykkyl}
           alt=""
-        />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        /> */}
+        {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Box
             sx={{
               width: "80px",
@@ -48,7 +70,7 @@ const PostArticle = () => {
             <img sx={{ width: "10px", height: "10px" }} src={dot4} alt="" />
             <img sx={{ width: "10px", height: "10px" }} src={dot5} alt="" />
           </Box>
-        </Box>
+        </Box> */}
         <Typography
           sx={{
             fontFamily: "Matrial Sans",

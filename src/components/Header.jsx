@@ -167,7 +167,7 @@ const Header = () => {
                 id="my-input"
                 aria-describedby="my-helper-text"
                 disableUnderline={true}
-                placeholder="Search"
+                placeholder="о чем хотите узнать?"
                 sx={{
                   fontFamily: "Material Sans",
                   fontSize: "18px",
