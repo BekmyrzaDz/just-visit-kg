@@ -41,6 +41,8 @@ const ButtonCompoent = styled(NavLink)(() => ({
 const TypographyComponent = styled(Typography)(() => ({
   "&:hover": {
     borderBottom: "1px solid #D8AD83",
+    color: "#D8AD83",
+    transitionDelay: "0.1s",
   },
 }));
 
@@ -78,6 +80,7 @@ const Header = () => {
                   fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
+                  borderBottom: "1px solid transparent",
                 }}
                 textAlign="center"
               >
@@ -91,6 +94,7 @@ const Header = () => {
                   fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
+                  borderBottom: "1px solid transparent",
                 }}
                 textAlign="center"
               >
@@ -104,6 +108,7 @@ const Header = () => {
                   fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
+                  borderBottom: "1px solid transparent",
                 }}
                 textAlign="center"
               >
@@ -117,6 +122,7 @@ const Header = () => {
                   fontWeight: 400,
                   fontSize: 18,
                   lineHeight: "32.83px",
+                  borderBottom: "1px solid transparent",
                 }}
                 textAlign="center"
               >

@@ -1,3 +1,5 @@
+import React from "react";
+// MUI components
 import {
   Box,
   Checkbox,
@@ -5,10 +7,62 @@ import {
   FormGroup,
   Typography,
 } from "@mui/material";
-import React from "react";
+// Components
 import PostLifehack from "../components/PostLifehack";
 
+// Images
+import lifehack1 from "../assets/images/yssyk-kuls-lifehack.jpg";
+import lifehack2 from "../assets/images/issyk-kul-2.jpg";
+import lifehack3 from "../assets/images/issyk-kul-3.jpg";
+import lifehack4 from "../assets/images/issyk-kul-4.jpg";
+import lifehack5 from "../assets/images/issyk-kul-5.jpg";
+
+// Sary Cheleck
+import saryCheleck from "../assets/images/sary-cheleck-lifehack.jpg";
+
+// Treacking
+import tracking from "../assets/images/tracking-lifehack.jpg";
+
 const Lifehack = () => {
+  const data = [
+    {
+      title: "Что нужно взять для трекинга?",
+      images: [
+        { url: lifehack1 },
+        { url: lifehack2 },
+        { url: lifehack3 },
+        { url: lifehack4 },
+        { url: lifehack5 },
+      ],
+      description:
+        "С каждым годом всё больше людей выбирают активный отдых на природе и отправляются в многодневный поход. Залогом любого успешного похода является правильно собранные вещи. Список...",
+    },
+    {
+      title: "Куда следует пойти на трекинг в Кыргыстане",
+      images: [
+        { url: saryCheleck },
+        { url: lifehack2 },
+        { url: lifehack3 },
+        { url: lifehack4 },
+        { url: lifehack5 },
+      ],
+      description:
+        "Горный поход к озеру Сары-Челек и другим озерама окружающим его. В этом удивительном походе вы сполна насладитесь видами на озером Сары-Челек с разных панорамных точек. А также за....",
+    },
+    {
+      title: "Лайфхаки, как не облажаться с трекингом ",
+      images: [
+        { url: tracking },
+        { url: lifehack2 },
+        { url: lifehack3 },
+        { url: lifehack4 },
+        { url: lifehack5 },
+      ],
+      description:
+        "«Вы должны быть готовы к самому худшему: безостановочному ливню или штормовому ветру». За границей костры можно жечь далеко не везде, во многих европейских странах вы заплатите....",
+    },
+  ];
+
   return (
     <>
       <Box>
@@ -114,12 +168,7 @@ const Lifehack = () => {
           </Box>
         </Box>
       </Box>
-      <PostLifehack />
-      <PostLifehack />
-      <PostLifehack />
-      <PostLifehack />
-      <PostLifehack />
-      <PostLifehack />
+      <PostLifehack data={data} />
     </>
   );
 };
