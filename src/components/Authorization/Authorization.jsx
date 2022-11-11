@@ -1,9 +1,12 @@
 import * as yup from 'yup';
 import {useFormik} from "formik";
 import {Button, TextField} from "@mui/material";
-import Login from "../../components/GoogleLogin/Login";
+import Login from "../GoogleLogin/Login";
 import axios from "axios";
 import logo from "../../assets/images/Main-Logo.svg"
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router";
+import {useEffect, useState} from "react";
 
 
 const validationSchema = yup.object({
@@ -18,21 +21,28 @@ const validationSchema = yup.object({
 });
 
 const Authorization = () => {
+    const dispatch = useDispatch();
+    // const navigate = useNavigate();
+    const { profile } = useSelector(state => state.store);
+    const [user, setUser] = useState('');
+    const [error, setError] = useState(null)
+
+    // useEffect(()=>{
+    //     if (profile){
+    //         navigate('/');
+    //     }
+    // }, [profile, navigate]);
+
+
+
     const formik = useFormik({
         initialValues: {
             email: '',
             password: ''
         },
-        validationSchema: validationSchema,
+        validationSchema,
         onSubmit: async (values) => {
-            // await axios.post("http://just-visit.herokuapp.com/users/register/traveler/", {
-            //     first_name:"Али",
-            //     last_name:"Алиев",
-            //     password:"Limon_123_321",
-            //     email:"ali.aliev.27.11.02@gmail.com",
-            //     phone:"+996552271102"
-            // });
-            await axios.post("http://just-visit.herokuapp.com/login/personal/", {
+            await axios.post(process.env.REACT_APP_BASE_URL + "users/login/personal/", {
                 email: values.email,
                 password: values.password,
             }).then(res => {

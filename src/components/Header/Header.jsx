@@ -15,8 +15,9 @@ import {Container} from "@mui/system";
 import React from "react";
 import {Link, NavLink} from "react-router-dom";
 import styled from "styled-components";
-import Authorization from "../../pages/Authorization/Authorization";
+import Authorization from "../Authorization/Authorization";
 import "./Header.css"
+import {useSelector} from "react-redux";
 
 const ButtonComponent = styled(NavLink)(() => ({
     fontFamily: "Oswald",
@@ -28,11 +29,6 @@ const ButtonComponent = styled(NavLink)(() => ({
     color: "#000",
     background: "#D8AD83",
     textDecoration: "none",
-    // "&:hover": {
-    //   background: "#D8AD83",
-    //   color: "#000",
-    //   border: "1px solid #000",
-    // },
 }));
 
 
@@ -42,8 +38,15 @@ const TypographyComponent = styled(Typography)(() => ({
     },
 }));
 
+const linkStyle = {
+    color: "#FFFFFF",
+    textDecoration: "none"
+}
+
 const Header = () => {
     const [open, setOpen] = useState(false);
+    const { profile } = useSelector(state => state.store);
+    console.log(profile);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -55,7 +58,7 @@ const Header = () => {
 
     return (
         <AppBar position="static" sx={{background: "#1E2431"}}>
-            <Container maxWidth="l">
+            <Container maxWidth="xl">
                 <Box
                     sx={{
                         display: "flex",
@@ -118,19 +121,6 @@ const Header = () => {
                                 Блоги пользователей
                             </TypographyComponent>
                         </MenuItem>
-                        {/*<MenuItem sx={{ marginRight: "58px" }}>*/}
-                        {/*  <TypographyComponent*/}
-                        {/*    sx={{*/}
-                        {/*      fonntFamily: "Oswald",*/}
-                        {/*      fontWeight: 400,*/}
-                        {/*      fontSize: 18,*/}
-                        {/*      lineHeight: "32.83px",*/}
-                        {/*    }}*/}
-                        {/*    textAlign="center"*/}
-                        {/*  >*/}
-                        {/*    Личный кабинет*/}
-                        {/*  </TypographyComponent>*/}
-                        {/*</MenuItem>*/}
                         <MenuItem>
                             <TypographyComponent
                                 sx={{
@@ -141,7 +131,12 @@ const Header = () => {
                                 }}
                                 textAlign="center"
                             >
-                                Зарегистрироваться
+                                <Link
+                                    to="/registration"
+                                    style={linkStyle}
+                                >
+                                    Зарегистрироваться
+                                </Link>
                             </TypographyComponent>
                         </MenuItem>
                     </Box>
@@ -163,12 +158,12 @@ const Header = () => {
                 PaperProps={{sx: {
                     background: "transparent",
                     boxShadow: "none",
-                    width: "600px",
+                    width: "41,6vw",
                     padding: "0"
                 }}}
             >
                 <DialogContent sx={{
-                    width: "600px",
+                    width: "41,6vw",
                     padding: "0"
                 }}
                 >

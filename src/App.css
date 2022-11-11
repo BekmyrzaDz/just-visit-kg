@@ -1,5 +1,19 @@
-*,
-*:after,
-*:before{
-    box-sizing: border-box; !important;
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #D8AD83 !important;
+    color: #BAB5B1 !important
+}
+.MuiFormLabel-root.Mui-focused {
+    color: #BAB5B1 !important;
+}
+
+.MuiOutlinedInput-input {
+    color: #BAB5B1 !important;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    color: #BAB5B1 !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: #D8AD83 !important;
 }
