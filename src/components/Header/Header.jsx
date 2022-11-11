@@ -1,18 +1,7 @@
-import { useState } from "react";
+import React, {useState} from "react";
 import logo from "../../assets/images/logo-justvisit.svg";
-import {
-    AppBar,
-    Box, Button,
-    Dialog, DialogActions,
-    DialogContent, DialogContentText,
-    DialogTitle,
-    IconButton,
-    MenuItem, TextField,
-    Tooltip,
-    Typography,
-} from "@mui/material";
+import {AppBar, Box, Dialog, DialogContent, IconButton, MenuItem, Tooltip, Typography,} from "@mui/material";
 import {Container} from "@mui/system";
-import React from "react";
 import {Link, NavLink} from "react-router-dom";
 import styled from "styled-components";
 import Authorization from "../Authorization/Authorization";
@@ -45,7 +34,7 @@ const linkStyle = {
 
 const Header = () => {
     const [open, setOpen] = useState(false);
-    const { profile } = useSelector(state => state.store);
+    const {profile} = useSelector(state => state.store);
     console.log(profile);
 
     const handleClickOpen = () => {
@@ -155,12 +144,14 @@ const Header = () => {
             <Dialog
                 open={open}
                 onClose={handleClose}
-                PaperProps={{sx: {
-                    background: "transparent",
-                    boxShadow: "none",
-                    width: "41,6vw",
-                    padding: "0"
-                }}}
+                PaperProps={{
+                    sx: {
+                        background: "transparent",
+                        boxShadow: "none",
+                        width: "41,6vw",
+                        padding: "0"
+                    }
+                }}
             >
                 <DialogContent sx={{
                     width: "41,6vw",

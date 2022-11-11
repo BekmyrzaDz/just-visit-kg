@@ -5,8 +5,7 @@ import Login from "../GoogleLogin/Login";
 import axios from "axios";
 import logo from "../../assets/images/Main-Logo.svg"
 import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router";
-import {useEffect, useState} from "react";
+import {setProfile} from "../../redux/reducer";
 
 
 const validationSchema = yup.object({
@@ -22,18 +21,7 @@ const validationSchema = yup.object({
 
 const Authorization = () => {
     const dispatch = useDispatch();
-    // const navigate = useNavigate();
-    const { profile } = useSelector(state => state.store);
-    const [user, setUser] = useState('');
-    const [error, setError] = useState(null)
-
-    // useEffect(()=>{
-    //     if (profile){
-    //         navigate('/');
-    //     }
-    // }, [profile, navigate]);
-
-
+    const {profile} = useSelector(state => state.store);
 
     const formik = useFormik({
         initialValues: {
@@ -47,6 +35,11 @@ const Authorization = () => {
                 password: values.password,
             }).then(res => {
                 console.log(res);
+                dispatch(setProfile({user: res.data}))
+                console.log(profile);
+            }).catch(err => {
+                alert(err);
+                console.log(err);
             })
         },
     });
@@ -111,6 +104,6 @@ const Authorization = () => {
         </div>
     )
 }
-//'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning',
+
 export default Authorization;
 

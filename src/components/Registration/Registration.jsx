@@ -5,9 +5,9 @@ import axios from "axios";
 import * as yup from "yup";
 import Login from "../GoogleLogin/Login";
 import {useDispatch, useSelector} from "react-redux";
-import {useState} from "react";
+import {useEffect} from "react";
 import {setProfile} from "../../redux/reducer";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const validationSchema = yup.object({
     firstName: yup
@@ -26,7 +26,7 @@ const validationSchema = yup.object({
         .required('Password is required'),
     checkPassword: yup
         .string('Repeat password above')
-        .oneOf([yup.ref('password'),null], 'Password must match')
+        .oneOf([yup.ref('password'), null], 'Password must match')
         .required('This field is required')
 });
 
@@ -34,10 +34,12 @@ const validationSchema = yup.object({
 const Registration = () => {
 
     const dispatch = useDispatch();
-    // const navigate = useNavigate();
-    const { profile } = useSelector(state => state.store);
-    const [user, setUser] = useState('');
-    const [error, setError] = useState(null)
+    const navigate = useNavigate();
+    const {profile} = useSelector(state => state.store);
+
+    useEffect(() => {
+        if (profile) navigate('/');
+    }, [profile])
 
     const formik = useFormik({
         initialValues: {
@@ -57,17 +59,18 @@ const Registration = () => {
                 email: values.email,
                 phone: values.phone,
             })
-                .then(res => {
-                    if(res.status === 201) {
-                        console.log(res);
-                        console.log(res.data);
-                        dispatch(setProfile({user: res.data}))
-                        setUser(res.data);
-                        console.log(user);
+                .then(async (res) => {
+                    await axios.post(process.env.REACT_APP_BASE_URL + "users/login/personal/", {
+                        email: values.email,
+                        password: values.password,
+                    }).then(response => {
+                        console.log(response);
+                        dispatch(setProfile({user: response.data}));
                         console.log(profile);
-                    } else {
-                        setError(res.message);
-                    }
+                    })
+                })
+                .catch(err => {
+                    console.log(err.response.data);
                 });
         },
     });
