@@ -1,3 +1,4 @@
+
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -10,6 +11,18 @@ import Places from "./pages/Places";
 import Blog from "./pages/Blog";
 
 function App() {
+
+  useEffect(() => {
+    function start() {
+        gapi.client.init({
+            clientId: process.env.REACT_APP_CLIENT_ID,
+            scope: ""
+        })
+    };
+
+    gapi.load('client:auth2', start);
+})
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
