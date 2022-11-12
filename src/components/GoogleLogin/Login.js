@@ -1,7 +1,8 @@
-import { GoogleLogin } from "@leecheuk/react-google-login"
+import {GoogleLogin} from "@leecheuk/react-google-login"
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {setProfile} from "../../redux/reducer";
+import jwtDecode from "jwt-decode";
 
 function Login() {
 
@@ -11,19 +12,22 @@ function Login() {
     const onSucces = async (res) => {
         console.log("LOGIN SUCCES! Current user: ", res);
         await axios.post(process.env.REACT_APP_BASE_URL + "users/google/", {
-            access_token: res.tokenObj.access_token,
-            id_token: res.tokenObj.id_token
+            access_token: res.tokenObj.access_token
         })
             .then(response => {
                 console.log(response);
-                dispatch(setProfile({user: {
-                     access: res.key,
-                     is_superuser: false,
-                     status: "You successfully logged in",
-                     refresh: res.key,
-                     user_id: "",
-                     user_type: "traveler",
-                    }}))
+                dispatch(setProfile({
+                    user: {
+                        user_id: response.data.user.pk,
+                        access_token: response.data.access_token,
+                        is_superuser: false,
+                        email: response.data.user.email,
+                        first_name: response.data.user.first_name,
+                        last_name: response.data.user.last_name,
+                        refresh_token: response.data.refresh_token,
+                        expires_day: jwtDecode(response.data.access_token).exp
+                    }
+                }))
             })
             .catch(err => {
                 console.log(err);

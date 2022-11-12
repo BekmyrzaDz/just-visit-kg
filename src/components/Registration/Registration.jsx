@@ -65,7 +65,18 @@ const Registration = () => {
                         password: values.password,
                     }).then(response => {
                         console.log(response);
-                        dispatch(setProfile({user: response.data}));
+                        dispatch(setProfile({
+                            user: {
+                                user_id: response.data.user_id,
+                                access_token: response.data.access,
+                                is_superuser: res.data.is_superuser,
+                                email: response.data.email,
+                                first_name: response.data.first_name,
+                                last_name: response.data.last_name,
+                                refresh_token: response.refresh,
+                                expires_day: response.expires_day
+                            }
+                        }));
                         console.log(profile);
                     })
                 })

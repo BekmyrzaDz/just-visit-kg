@@ -6,6 +6,7 @@ import axios from "axios";
 import logo from "../../assets/images/Main-Logo.svg"
 import {useDispatch, useSelector} from "react-redux";
 import {setProfile} from "../../redux/reducer";
+import Logout from "../GoogleLogin/Logout";
 
 
 const validationSchema = yup.object({
@@ -35,7 +36,18 @@ const Authorization = () => {
                 password: values.password,
             }).then(res => {
                 console.log(res);
-                dispatch(setProfile({user: res.data}))
+                dispatch(setProfile({
+                    user: {
+                        user_id: res.data.user_id,
+                        access_token: res.data.access,
+                        is_superuser: res.data.is_superuser,
+                        email: res.data.email,
+                        first_name: res.data.first_name,
+                        last_name: res.data.last_name,
+                        refresh_token: res.data.refresh,
+                        expires_day: res.data.expires_day
+                    }
+                }))
                 console.log(profile);
             }).catch(err => {
                 alert(err);
@@ -100,6 +112,7 @@ const Authorization = () => {
                     Войти
                 </Button>
                 <Login/>
+                <Logout/>
             </form>
         </div>
     )
