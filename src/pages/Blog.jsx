@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 // Components
-import PostNews from "../components/PostNews";
+import PostBlog from "../components/posts/PostBlog/PostBlog";
 
 // Images
 import bishkek from "../assets/images/bishkek.jpg";
@@ -52,7 +52,7 @@ const New = () => {
 
   return (
     <>
-      <Box>
+      {/* <Box>
         <Box
           sx={{
             position: "absolute",
@@ -154,8 +154,8 @@ const New = () => {
             </FormGroup>
           </Box>
         </Box>
-      </Box>
-      <PostNews data={data} />
+      </Box> */}
+      <PostBlog data={data} />
     </>
   );
 };

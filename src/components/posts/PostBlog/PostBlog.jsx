@@ -1,26 +1,10 @@
-import React from "react";
-import "../index.css";
-import issyKyl1 from "../assets/images/issyk-kul-1.jpg";
-import issyKyl2 from "../assets/images/issyk-kul-2.jpg";
-import issyKyl3 from "../assets/images/issyk-kul-3.jpg";
-import issyKyl4 from "../assets/images/issyk-kul-4.jpg";
-import issyKyl5 from "../assets/images/issyk-kul-5.jpg";
 import { Typography } from "@mui/material";
+import React from "react";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "../ImageSlider/ImageSlider";
 
-const PostArticle = ({ data }) => {
-  // console.log(data);
-
-  const slides = [
-    { url: issyKyl1, title: "Yssyk-Kyl" },
-    { url: issyKyl2, title: "Yssyk-Kyl" },
-    { url: issyKyl3, title: "Yssyk-Kyl" },
-    { url: issyKyl4, title: "Yssyk-Kyl" },
-    { url: issyKyl5, title: "Yssyk-Kyl" },
-  ];
-
+const PostNews = ({ data }) => {
   const containerStyles = {
     width: "592px",
     height: "280px",
@@ -34,7 +18,7 @@ const PostArticle = ({ data }) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            marginBottom: "17px",
+            marginBottom: "42px",
           }}
         >
           <Typography
@@ -44,7 +28,7 @@ const PostArticle = ({ data }) => {
               fontWeight: 600,
               fontSize: "25px",
               lineHeight: "37.05px",
-              color: "var(--white)",
+              color: "#FCEEE3",
               marginBottom: "20px",
             }}
           >
@@ -66,9 +50,9 @@ const PostArticle = ({ data }) => {
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <Link
-              to="/articles"
+              to="/news"
               style={{
-                fontFamily: "Material Sans",
+                fontFamily: "Matrial Sans",
                 fontWeight: "400",
                 padding: "10px 20px",
                 textDecoration: "none",
@@ -86,5 +70,4 @@ const PostArticle = ({ data }) => {
     </>
   );
 };
-
-export default PostArticle;
+export default PostNews;

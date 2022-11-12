@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../index.css";
+import "../../../index.css";
 import { Box } from "@mui/system";
 
 const ImageSlider = ({ slides }) => {
@@ -19,6 +19,7 @@ const ImageSlider = ({ slides }) => {
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundImage: `url(${slides[currentIndex].url})`,
+    transition: "all 10ms ease 300ms",
   };
 
   const leftArrowStyles = {
@@ -51,7 +52,7 @@ const ImageSlider = ({ slides }) => {
 
   const goToNext = () => {
     const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 2;
     setCurrentIndex(newIndex);
   };
 

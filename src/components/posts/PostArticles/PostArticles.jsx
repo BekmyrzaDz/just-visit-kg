@@ -1,10 +1,16 @@
-import { Typography } from "@mui/material";
 import React from "react";
+import "../../../index.css";
+// import issyKyl1 from "../../assets/images/issyk-kul-1.jpg";
+// import issyKyl2 from "../../assets/images/issyk-kul-2.jpg";
+// import issyKyl3 from "../../assets/images/issyk-kul-3.jpg";
+// import issyKyl4 from "../../assets/images/issyk-kul-4.jpg";
+// import issyKyl5 from "../../assets/images/issyk-kul-5.jpg";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "../ImageSlider/ImageSlider";
 
-const PostNews = ({ data }) => {
+const PostArticle = ({ data }) => {
   const containerStyles = {
     width: "592px",
     height: "280px",
@@ -18,7 +24,7 @@ const PostNews = ({ data }) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            marginBottom: "17px",
+            marginBottom: "42px",
           }}
         >
           <Typography
@@ -28,7 +34,7 @@ const PostNews = ({ data }) => {
               fontWeight: 600,
               fontSize: "25px",
               lineHeight: "37.05px",
-              color: "#FCEEE3",
+              color: "var(--white)",
               marginBottom: "20px",
             }}
           >
@@ -46,13 +52,13 @@ const PostNews = ({ data }) => {
               marginBottom: "20px",
             }}
           >
-            {post.descroption}
+            {post.description}
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <Link
-              to="/news"
+              to="/articles"
               style={{
-                fontFamily: "Matrial Sans",
+                fontFamily: "Material Sans",
                 fontWeight: "400",
                 padding: "10px 20px",
                 textDecoration: "none",
@@ -70,5 +76,4 @@ const PostNews = ({ data }) => {
     </>
   );
 };
-
-export default PostNews;
+export default PostArticle;

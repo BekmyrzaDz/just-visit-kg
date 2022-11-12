@@ -1,6 +1,12 @@
-import "./Header.css";
-import logo from "../assets/images/logo-justvisit.svg";
-import search from "../assets/images/search.svg";
+import React from "react";
+// Styles
+import "../../index.css";
+import styles from "./Header.module.scss";
+import styled from "styled-components";
+// Images
+import logo from "../../assets/images/logo-justvisit.svg";
+import search from "../../assets/images/search.svg";
+// MUI components
 import {
   AppBar,
   Avatar,
@@ -16,10 +22,10 @@ import {
   Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
-import React from "react";
+// React-router-dom components
 import { Link, NavLink } from "react-router-dom";
-import styled from "styled-components";
-import Select from "./Select";
+// Components
+import Select from "./Select/Select";
 
 const ButtonCompoent = styled(NavLink)(() => ({
   fontFamily: "Oswald",
@@ -31,25 +37,12 @@ const ButtonCompoent = styled(NavLink)(() => ({
   color: "#000",
   background: "#D8AD83",
   textDecoration: "none",
-  // "&:hover": {
-  //   background: "#D8AD83",
-  //   color: "#000",
-  //   border: "1px solid #000",
-  // },
-}));
-
-const TypographyComponent = styled(Typography)(() => ({
-  "&:hover": {
-    borderBottom: "1px solid #D8AD83",
-    color: "#D8AD83",
-    transitionDelay: "0.1s",
-  },
 }));
 
 const Header = () => {
   return (
     <AppBar position="static" sx={{ background: "#1E2431" }}>
-      <Container maxWidth="1336px">
+      <Container maxWidth="1240px">
         <Box
           sx={{
             display: "flex",
@@ -62,7 +55,6 @@ const Header = () => {
               <Tooltip>
                 <IconButton>
                   <img src={logo} alt="" />
-                  {/* <Avatar src={logo} alt="" /> */}
                 </IconButton>
               </Tooltip>
             </Link>
@@ -73,61 +65,77 @@ const Header = () => {
               justifyContent: "space-between",
             }}
           >
-            <MenuItem>
-              <TypographyComponent
+            <MenuItem sx={{ marginRight: "50px" }}>
+              <Typography
                 sx={{
-                  fonntFamily: "Oswald",
+                  fontFamily: "Martel Sans",
                   fontWeight: 400,
-                  fontSize: 18,
+                  fontSize: "18px",
                   lineHeight: "32.83px",
                   borderBottom: "1px solid transparent",
+                  "&:hover": {
+                    borderBottom: "1px solid #D8AD83",
+                    color: "#D8AD83",
+                    transitionDelay: "0.2s",
+                  },
                 }}
-                textAlign="center"
               >
                 Главная
-              </TypographyComponent>
+              </Typography>
             </MenuItem>
-            <MenuItem>
-              <TypographyComponent
+            <MenuItem sx={{ marginRight: "50px" }}>
+              <Typography
                 sx={{
-                  fonntFamily: "Oswald",
+                  fontFamily: "Martel Sans",
                   fontWeight: 400,
-                  fontSize: 18,
+                  fontSize: "18px",
                   lineHeight: "32.83px",
                   borderBottom: "1px solid transparent",
+                  "&:hover": {
+                    borderBottom: "1px solid #D8AD83",
+                    color: "#D8AD83",
+                    transitionDelay: "0.2s",
+                  },
                 }}
-                textAlign="center"
               >
                 Интересные места
-              </TypographyComponent>
+              </Typography>
             </MenuItem>
-            <MenuItem>
-              <TypographyComponent
+            <MenuItem sx={{ marginRight: "50px" }}>
+              <Typography
                 sx={{
-                  fonntFamily: "Oswald",
+                  fontFamily: "Martel Sans",
                   fontWeight: 400,
-                  fontSize: 18,
+                  fontSize: "18px",
                   lineHeight: "32.83px",
                   borderBottom: "1px solid transparent",
+                  "&:hover": {
+                    borderBottom: "1px solid #D8AD83",
+                    color: "#D8AD83",
+                    transitionDelay: "0.2s",
+                  },
                 }}
-                textAlign="center"
               >
                 Блоги пользователей
-              </TypographyComponent>
+              </Typography>
             </MenuItem>
-            <MenuItem>
-              <TypographyComponent
+            <MenuItem sx={{ marginRight: "50px" }}>
+              <Typography
                 sx={{
-                  fonntFamily: "Oswald",
+                  fontFamily: "Martel Sans",
                   fontWeight: 400,
-                  fontSize: 18,
+                  fontSize: "18px",
                   lineHeight: "32.83px",
                   borderBottom: "1px solid transparent",
+                  "&:hover": {
+                    borderBottom: "1px solid #D8AD83",
+                    color: "#D8AD83",
+                    transitionDelay: "0.2s",
+                  },
                 }}
-                textAlign="center"
               >
                 Личный кабинет
-              </TypographyComponent>
+              </Typography>
             </MenuItem>
             <MenuItem>
               <Select />
@@ -157,18 +165,6 @@ const Header = () => {
                 marginLeft: "10px",
               }}
             >
-              {/* <TextField
-              id="outlined-basic"
-              variant="outlined"
-              placeholder="Search"
-              sx={{
-                width: "198px",
-                background: "var(--white)",
-                ".MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-            /> */}
               <Input
                 id="my-input"
                 aria-describedby="my-helper-text"

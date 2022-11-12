@@ -1,4 +1,5 @@
 import React from "react";
+import "../index.css";
 // MUI components
 import {
   Box,
@@ -8,69 +9,52 @@ import {
   Typography,
 } from "@mui/material";
 // Components
-import PostLifehack from "../components/PostLifehack";
-
+import PostPlaces from "../components/posts/PostPlaces/PostPlaces";
 // Images
-import lifehack1 from "../assets/images/yssyk-kuls-lifehack.jpg";
-import lifehack2 from "../assets/images/issyk-kul-2.jpg";
-import lifehack3 from "../assets/images/issyk-kul-3.jpg";
-import lifehack4 from "../assets/images/issyk-kul-4.jpg";
-import lifehack5 from "../assets/images/issyk-kul-5.jpg";
-
+import carousel1 from "../assets/images/carousel-1.jpg";
+import carousel2 from "../assets/images/carousel-2.jpg";
+import carousel3 from "../assets/images/carousel-3.jpg";
+import carousel4 from "../assets/images/carousel-4.jpg";
+import carousel5 from "../assets/images/carousel-5.jpg";
 // Sary Cheleck
 import saryCheleck from "../assets/images/sary-cheleck-lifehack.jpg";
-
 // Treacking
 import tracking from "../assets/images/tracking-lifehack.jpg";
 
-const Lifehack = () => {
-  const data = [
-    {
-      title: "Что нужно взять для трекинга?",
-      images: [
-        { url: lifehack1 },
-        { url: lifehack2 },
-        { url: lifehack3 },
-        { url: lifehack4 },
-        { url: lifehack5 },
-      ],
-      description:
-        "С каждым годом всё больше людей выбирают активный отдых на природе и отправляются в многодневный поход. Залогом любого успешного похода является правильно собранные вещи. Список...",
-    },
-    {
-      title: "Куда следует пойти на трекинг в Кыргыстане",
-      images: [
-        { url: saryCheleck },
-        { url: lifehack2 },
-        { url: lifehack3 },
-        { url: lifehack4 },
-        { url: lifehack5 },
-      ],
-      description:
-        "Горный поход к озеру Сары-Челек и другим озерама окружающим его. В этом удивительном походе вы сполна насладитесь видами на озером Сары-Челек с разных панорамных точек. А также за....",
-    },
-    {
-      title: "Лайфхаки, как не облажаться с трекингом ",
-      images: [
-        { url: tracking },
-        { url: lifehack2 },
-        { url: lifehack3 },
-        { url: lifehack4 },
-        { url: lifehack5 },
-      ],
-      description:
-        "«Вы должны быть готовы к самому худшему: безостановочному ливню или штормовому ветру». За границей костры можно жечь далеко не везде, во многих европейских странах вы заплатите....",
-    },
-  ];
+const Places = () => {
+  const dataPlaces = {
+    dataTours: [
+      {
+        title: "Поездка на Ыссык-Куль",
+        img: carousel1,
+      },
+      {
+        title: "Ущелье Чон-Кемин",
+        img: carousel2,
+      },
+      {
+        title: "Ущелье Чункурчак",
+        img: carousel3,
+      },
+      {
+        title: "Ущелье Кегети",
+        img: carousel4,
+      },
+      {
+        title: "Кель-Суу",
+        img: carousel5,
+      },
+    ],
+  };
 
   return (
     <>
-      <Box>
+      <Box sx={{ marginTop: "105px" }}>
         <Box
           sx={{
             position: "absolute",
-            left: "119px",
-            top: "305px",
+            right: "119px",
+            top: "210px",
             width: "241px",
             background: "var(--light-brown)",
             padding: "5px 30px",
@@ -80,7 +64,7 @@ const Lifehack = () => {
           <Typography
             variant="h5"
             sx={{
-              fontFamily: "Material Sans",
+              fontFamily: "Martel Sans",
               color: "var(--black)",
               fontWeight: 600,
               fontSize: "17px",
@@ -101,9 +85,6 @@ const Lifehack = () => {
                   <Checkbox
                     sx={{
                       color: "var(--black)",
-                      // ".MuiFormControlLabel-label": {
-                      //   color: "var(--black)",
-                      // },
                       "&.Mui-checked": {
                         color: "var(--black)",
                       },
@@ -168,9 +149,9 @@ const Lifehack = () => {
           </Box>
         </Box>
       </Box>
-      <PostLifehack data={data} />
+      <PostPlaces />
     </>
   );
 };
 
-export default Lifehack;
+export default Places;

@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: Oswald;
   src: url('./assets/fonts/Oswald-Bold.ttf') format('ttf');
   font-style: normal;
@@ -28,7 +28,13 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;700;800;900&display=swap');
 
 :root {
   --dark-blue: #1E2431;
@@ -39,31 +45,14 @@
   --gray: #939393;
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Oswald-Regular", sans-serif;
-}
-
-.link {
-  font-family: Oswald;
-  border-radius: 20px;
-  border: 1px solid var(--brown);
-  font-size: 20px;
-  padding: 10px 26px;
-  line-height: 24px;
-  color: var(--white);
-  background: var(--dark-blue);
-  text-decoration: none;
-}
-
-.active {
-  font-family: Oswald;
-  background: var(--light-brown);
-  border-radius: 20px;
-  border: 1px solid var(--black);
-  font-size: 20px;
-  padding: 10px 26px;
-  line-height: 24px;
-  text-decoration: none;
-  color: var(--black);
+  font-family: Oswald, sans-serif;
+  background-color: var(--dark-blue);
 }
