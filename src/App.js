@@ -1,4 +1,3 @@
-
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -9,6 +8,9 @@ import Article from "./pages/Article";
 import Home from "./pages/Home";
 import Places from "./pages/Places";
 import Blog from "./pages/Blog";
+import {useEffect} from "react";
+import {gapi} from "gapi-script";
+import Registration from "./components/Registration/Registration";
 
 function App() {
 
@@ -18,13 +20,14 @@ function App() {
             clientId: process.env.REACT_APP_CLIENT_ID,
             scope: ""
         })
-    };
+    }
 
     gapi.load('client:auth2', start);
 })
 
   return (
     <Routes>
+        <Route path="/registration" element={<Registration/>}/>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/articles" element={<Article />} />

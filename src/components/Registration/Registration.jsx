@@ -8,6 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {setProfile} from "../../redux/reducer";
 import {Link, useNavigate} from "react-router-dom"
+import "../../App.css"
+
 
 const validationSchema = yup.object({
     firstName: yup

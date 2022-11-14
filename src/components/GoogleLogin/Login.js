@@ -1,13 +1,12 @@
 import {GoogleLogin} from "@leecheuk/react-google-login"
 import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setProfile} from "../../redux/reducer";
 import jwtDecode from "jwt-decode";
 
 function Login() {
 
     const dispatch = useDispatch();
-    const {profile} = useSelector(state => state.store);
 
     const onSucces = async (res) => {
         console.log("LOGIN SUCCES! Current user: ", res);

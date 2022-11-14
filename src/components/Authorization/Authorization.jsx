@@ -7,6 +7,7 @@ import logo from "../../assets/images/Main-Logo.svg"
 import {useDispatch, useSelector} from "react-redux";
 import {setProfile} from "../../redux/reducer";
 import Logout from "../GoogleLogin/Logout";
+import "../Header/Header.css"
 
 
 const validationSchema = yup.object({
