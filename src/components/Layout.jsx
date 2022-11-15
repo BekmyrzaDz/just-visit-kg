@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./Layout.module.scss";
+import styles from "./Layout.module.css";
 import { Button, Container, Typography } from "@mui/material";
-import Header from "./Header";
+import Header from "./Header/Header";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "@mui/system";
 
-const ButtonCompoent = styled(Link)(() => ({
+const ButtonComponent = styled(Link)(() => ({
   fontFamily: "Oswald",
   borderRadius: "20px",
   border: "1px solid #A97155",

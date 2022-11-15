@@ -16,6 +16,10 @@ import carousel2 from "../assets/images/carousel-2.jpg";
 import carousel3 from "../assets/images/carousel-3.jpg";
 import carousel4 from "../assets/images/carousel-4.jpg";
 import carousel5 from "../assets/images/carousel-5.jpg";
+// Sary Cheleck
+import saryCheleck from "../assets/images/sary-cheleck-lifehack.jpg";
+// Treacking
+import tracking from "../assets/images/tracking-lifehack.jpg";
 
 const Places = () => {
   const dataPlaces = {

@@ -5,41 +5,21 @@
   font-weight: 500;
   font-size: 45px;
   color: $white;
-}
-
-// .item {
-//   width: 300px;
-//   height: 300px;
-//   background: url(../../../../assets/images/carousel-1.jpg);
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: cover;
-//   border-radius: 5px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   padding-top: 5px;
-// }
-
-.container {
-  // display: flex;
-  // overflow: auto;
-  // scroll-snap-type: x mandatory;
+  margin-left: 115px;
 }
 
 .item {
-  // scroll-snap-align: start;
-  //   width: 300px;
-  // height: 300px;
-  // // background: url(../../../../assets/images/carousel-1.jpg);
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
-  // border-radius: 5px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // padding-top: 5px;
+  width: 300px;
+  height: 300px;
+  background: url(../../../../assets/images/carousel-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5px;
 }
 
 .itemTop {
@@ -61,6 +41,7 @@
 .itemIcon {
   width: "30px";
   height: "30px";
+  cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
@@ -85,4 +66,5 @@
   position: absolute;
   right: 44px;
   bottom: 30px;
+  cursor: pointer;
 }

@@ -7,7 +7,7 @@ import rusFlag from "../../../assets/images/russian-flag.svg";
 import usaFlag from "../../../assets/images/united-states-flag-icon.svg";
 
 export default function SelectSmall() {
-  const [current, setCurrent] = React.useState("Русский");
+  const [current, setCurrent] = React.useState(10);
 
   const handleChange = (event) => {
     setCurrent(event.target.value);

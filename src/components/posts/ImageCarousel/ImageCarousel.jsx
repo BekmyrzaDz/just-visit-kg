@@ -17,6 +17,9 @@ import { Box } from "@mui/material";
 
 export default class Responsive extends Component {
   render() {
+    const posts = this.props.data;
+    console.log(posts);
+
     var settings = {
       arrows: false,
       dots: false,
@@ -56,344 +59,33 @@ export default class Responsive extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {/* <div>
-            <Box
-              sx={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel1})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </Box>
-          </div>
-          <div>
-            <div className={styled.item}>
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Ущелье Чон-Кемин</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
+          {posts.map((post) => (
+            <div>
+              <div
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  backgroundImage: `url(${post.img})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  borderRadius: "5px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  paddingTop: "5px",
+                }}
+              >
+                <div className={styled.itemTop}>
+                  <span className={styled.itemTitle}>{post.title}</span>
+                  <img src={like} alt="" className={styled.itemIcon} />
+                </div>
+                <div className={styled.itemButtom}>
+                  <button className={styled.button}>Подробнее</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div className={styled.item}>
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Ущелье Чункурчак</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className={styled.item}>
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Ущелье Кегети</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                background: "url(../../../../assets/images/carousel-1.jpg)",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Кель-Суу</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div> */}
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel1})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel2})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel3})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel4})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel5})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel1})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel2})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel3})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel4})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundImage: `url(${carousel5})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                paddingTop: "5px",
-              }}
-            >
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
-              </div>
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     );
