@@ -5,12 +5,13 @@ import "../index.css";
 import {
   Box,
   Checkbox,
+  Container,
   FormControlLabel,
   FormGroup,
   Typography,
 } from "@mui/material";
 // Components
-import PostArticle from "../components/PostArticle";
+import PostArticle from "../components/posts/PostArticles/PostArticles";
 // Images
 // Issyk-Kul
 import issyKyl1 from "../assets/images/issyk-kul-1.jpg";
@@ -94,7 +95,7 @@ const Article = () => {
 
   return (
     <>
-      <Box>
+      {/* <Box>
         <Box
           sx={{
             position: "absolute",
@@ -196,8 +197,10 @@ const Article = () => {
             </FormGroup>
           </Box>
         </Box>
-      </Box>
-      <PostArticle data={data} />
+      </Box> */}
+      <Container sx={{ width: "640px" }}>
+        <PostArticle data={data} />
+      </Container>
     </>
   );
 };

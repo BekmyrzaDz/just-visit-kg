@@ -1,0 +1,26 @@
+.link {
+  font-family: Source Sans Pro;
+  border-radius: 20px;
+  border: 1px solid var(--brown);
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 26px;
+  line-height: 24px;
+  color: var(--white);
+  background: var(--dark-blue);
+  text-decoration: none;
+}
+
+.active {
+  font-family: Source Sans Pro;
+  background: var(--light-brown);
+  border-radius: 20px;
+  border: 1px solid var(--black);
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 26px;
+  line-height: 24px;
+  text-decoration: none;
+  color: var(--black);
+}
+/*# sourceMappingURL=Layout.module.css.map */

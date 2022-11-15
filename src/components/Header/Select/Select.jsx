@@ -1,14 +1,13 @@
 import * as React from "react";
-import "../index.css";
+import "../../../index.css";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import rusFlag from "../assets/images/russian-flag.svg";
-import usaFlag from "../assets/images/united-states-flag-icon.svg";
-import DefaultSelectItem from "./DefaultSelectItem";
+import rusFlag from "../../../assets/images/russian-flag.svg";
+import usaFlag from "../../../assets/images/united-states-flag-icon.svg";
 
 export default function SelectSmall() {
-  const [current, setCurrent] = React.useState("");
+  const [current, setCurrent] = React.useState("Русский");
 
   const handleChange = (event) => {
     setCurrent(event.target.value);
@@ -20,6 +19,7 @@ export default function SelectSmall() {
         variant="outlined"
         labelId="demo-select"
         id="demo-select"
+        label="Русский"
         value={current}
         onChange={handleChange}
         sx={{
@@ -39,8 +39,16 @@ export default function SelectSmall() {
               display: "flex",
             }}
           >
-            <span style={{ paddingRight: "5px" }}>RUS</span>
-            <img src={rusFlag} alt="" />
+            <span
+              style={{
+                fontFamily: "Martel Sans",
+                fontSize: "16px",
+                paddingRight: "5px",
+              }}
+            >
+              Русский
+            </span>
+            {/* <img src={rusFlag} alt="" /> */}
           </div>
         </MenuItem>
         <MenuItem value={20}>
@@ -49,8 +57,16 @@ export default function SelectSmall() {
               display: "flex",
             }}
           >
-            <span style={{ paddingRight: "5px" }}>ENG</span>
-            <img style={{ width: "30px" }} src={usaFlag} alt="" />
+            <span
+              style={{
+                fontFamily: "Martel Sans",
+                fontSize: "16px",
+                paddingRight: "5px",
+              }}
+            >
+              Английский
+            </span>
+            {/* <img style={{ width: "30px" }} src={usaFlag} alt="" /> */}
           </div>
         </MenuItem>
       </Select>

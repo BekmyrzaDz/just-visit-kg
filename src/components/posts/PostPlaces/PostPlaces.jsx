@@ -1,13 +1,19 @@
 import React from "react";
+// Styles
+import "../../../index.css";
+import styled from "./PostPlaces.module.scss";
 // MUI components
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 // Router components
-import { Link } from "react-router-dom";
+import { Link, NavLink, Outlet, Route, Routes } from "react-router-dom";
 // Components
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "../ImageSlider/ImageSlider";
 
-const PostLifehack = ({ data }) => {
+const PostPlaces = () => {
+  console.log(styled);
+  const setActive = ({ isActive }) => (isActive ? styled.active : styled.link);
+
   const containerStyles = {
     width: "592px",
     height: "280px",
@@ -16,12 +22,12 @@ const PostLifehack = ({ data }) => {
 
   return (
     <>
-      {data.map((post) => (
+      {/* {dataPlaces.map((post) => (
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            marginBottom: "17px",
+            marginBottom: "42px",
           }}
         >
           <Typography
@@ -69,9 +75,28 @@ const PostLifehack = ({ data }) => {
             </Link>
           </Box>
         </Box>
-      ))}
+      ))} */}
+      <Box>
+        <Box className={styled.parent}>
+          <Box className={styled.parentInner}>
+            <NavLink to="tours" className={setActive}>
+              Туры
+            </NavLink>
+            <NavLink to="hotels" className={setActive}>
+              Отели
+            </NavLink>
+            <NavLink to="restaurants" className={setActive}>
+              Рестораны
+            </NavLink>
+          </Box>
+        </Box>
+        <Box>
+          <Container maxWidth="1240px">
+            <Outlet />
+          </Container>
+        </Box>
+      </Box>
     </>
   );
 };
-
-export default PostLifehack;
+export default PostPlaces;

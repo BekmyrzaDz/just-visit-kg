@@ -1,4 +1,5 @@
 import React from "react";
+import "../index.css";
 // MUI components
 import {
   Box,
@@ -7,57 +8,49 @@ import {
   FormGroup,
   Typography,
 } from "@mui/material";
-
 // Components
-import PostNews from "../components/PostNews";
-
+import PostPlaces from "../components/posts/PostPlaces/PostPlaces";
 // Images
-import bishkek from "../assets/images/bishkek.jpg";
-import lifehack2 from "../assets/images/issyk-kul-2.jpg";
-import lifehack3 from "../assets/images/issyk-kul-3.jpg";
-import lifehack4 from "../assets/images/issyk-kul-4.jpg";
-import lifehack5 from "../assets/images/issyk-kul-5.jpg";
+import carousel1 from "../assets/images/carousel-1.jpg";
+import carousel2 from "../assets/images/carousel-2.jpg";
+import carousel3 from "../assets/images/carousel-3.jpg";
+import carousel4 from "../assets/images/carousel-4.jpg";
+import carousel5 from "../assets/images/carousel-5.jpg";
 
-// Sary Cheleck
-import eclipse from "../assets/images/eclipse.jpg";
-
-const New = () => {
-  const data = [
-    {
-      title:
-        "В Бишкеке открылся новый парк дружбы между Кыргызстаном и Азербайджаном",
-      images: [
-        { url: bishkek },
-        { url: lifehack2 },
-        { url: lifehack3 },
-        { url: lifehack4 },
-        { url: lifehack5 },
-      ],
-      description:
-        "Сегодня, 11 октября, в рамках госвизита Ильхама Алиева в Кыргызстан состоялось открытие Кыргызско-азербайджанского парка дружбы. Как сообщает администрация президента, в церемонии открытия приняли.... ",
-    },
-    {
-      title: "Сегодня в Кыргызстане произошло солнечное затмение",
-      images: [
-        { url: eclipse },
-        { url: lifehack2 },
-        { url: lifehack3 },
-        { url: lifehack4 },
-        { url: lifehack5 },
-      ],
-      description:
-        "ближе к вечеру произойдет завораживающее астрономическое явление, частичное солнечное затмение. В этот день Луна закроет Солнце на 70%.Стоит отметить, что солнечное затмение можно будет заметить, даже",
-    },
-  ];
+const Places = () => {
+  const dataPlaces = {
+    dataTours: [
+      {
+        title: "Поездка на Ыссык-Куль",
+        img: carousel1,
+      },
+      {
+        title: "Ущелье Чон-Кемин",
+        img: carousel2,
+      },
+      {
+        title: "Ущелье Чункурчак",
+        img: carousel3,
+      },
+      {
+        title: "Ущелье Кегети",
+        img: carousel4,
+      },
+      {
+        title: "Кель-Суу",
+        img: carousel5,
+      },
+    ],
+  };
 
   return (
     <>
-      <Box>
+      <Box sx={{ marginTop: "105px" }}>
         <Box
           sx={{
             position: "absolute",
-            left: "119px",
-            top: "305px",
+            right: "119px",
+            top: "210px",
             width: "241px",
             background: "var(--light-brown)",
             padding: "5px 30px",
@@ -67,7 +60,7 @@ const New = () => {
           <Typography
             variant="h5"
             sx={{
-              fontFamily: "Material Sans",
+              fontFamily: "Martel Sans",
               color: "var(--black)",
               fontWeight: 600,
               fontSize: "17px",
@@ -88,9 +81,6 @@ const New = () => {
                   <Checkbox
                     sx={{
                       color: "var(--black)",
-                      // ".MuiFormControlLabel-label": {
-                      //   color: "var(--black)",
-                      // },
                       "&.Mui-checked": {
                         color: "var(--black)",
                       },
@@ -155,9 +145,9 @@ const New = () => {
           </Box>
         </Box>
       </Box>
-      <PostNews data={data} />
+      <PostPlaces />
     </>
   );
 };
 
-export default New;
+export default Places;

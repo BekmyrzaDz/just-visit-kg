@@ -1,5 +1,5 @@
 import React from "react";
-import "../index.css";
+import styles from "./Layout.module.scss";
 import { Button, Container, Typography } from "@mui/material";
 import Header from "./Header";
 import { Link, NavLink, Outlet } from "react-router-dom";
@@ -24,7 +24,7 @@ const ButtonCompoent = styled(Link)(() => ({
 }));
 
 const Layout = () => {
-  const setActive = ({ isActive }) => (isActive ? "active" : "link");
+  const setActive = ({ isActive }) => (isActive ? styles.active : styles.link);
 
   return (
     <>
@@ -34,9 +34,8 @@ const Layout = () => {
           <Box sx={{ marginBottom: "50px" }}>
             <Typography
               variant="h1"
-              component="h1"
               sx={{
-                fontFamily: "Oswald",
+                fontFamily: "Oswald, sans-serif",
                 fontWeight: 500,
                 fontSize: "60px",
                 color: "var(--white)",
@@ -65,8 +64,8 @@ const Layout = () => {
                   marginRight: "10px",
                 }}
               >
-                <NavLink to="/lifehacks" className={setActive}>
-                  Лайфхаки
+                <NavLink to="/places" className={setActive}>
+                  Места
                 </NavLink>
               </Box>
               <Box
@@ -75,15 +74,17 @@ const Layout = () => {
                   justifyContent: "flex-end",
                 }}
               >
-                <NavLink to="/news" className={setActive}>
-                  Новости
+                <NavLink to="/blog" className={setActive}>
+                  Блог
                 </NavLink>
               </Box>
             </Box>
           </Box>
         </Container>
-        <Container sx={{ width: "640px" }}>
-          <Outlet />
+        <Container maxWidth="1240px">
+          <Box sx={{ paddingBottom: "50px" }}>
+            <Outlet />
+          </Box>
         </Container>
       </main>
     </>

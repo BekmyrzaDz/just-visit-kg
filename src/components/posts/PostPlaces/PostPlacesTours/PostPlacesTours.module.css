@@ -1,0 +1,60 @@
+.title {
+  font-family: Oswald, serif;
+  font-weight: 500;
+  font-size: 45px;
+  color: #FCEEE3;
+}
+
+.itemTop {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.itemTitle {
+  font-family: Oswald, serif;
+  font-weight: 400;
+  font-size: 23px;
+  color: #FCEEE3;
+  background: linear-gradient(92.99deg, rgba(255, 255, 255, 0.3) 2.14%, rgba(255, 255, 255, 0.3) 48.18%, rgba(255, 255, 255, 0.3) 101.24%);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.itemIcon {
+  width: "30px";
+  height: "30px";
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.itemButtom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  position: relative;
+}
+
+.button {
+  font-family: 'Martel Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 27px;
+  color: #FCEEE3;
+  background: #1E2431;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  right: 44px;
+  bottom: 30px;
+}
+/*# sourceMappingURL=PostPlacesTours.module.css.map */
