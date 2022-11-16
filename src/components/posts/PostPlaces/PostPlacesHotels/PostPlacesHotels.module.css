@@ -6,9 +6,13 @@
   margin-left: 115px;
 }
 
+.gridItem {
+  padding: 0;
+}
+
 .item {
-  width: 340px;
-  height: 347px;
+  width: 310px;
+  height: 322px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 20px 17px;
