@@ -1,21 +1,12 @@
-import React from "react";
+import React, { createContext } from "react";
 // Styles
 import "../../../index.css";
-import styled from "./PostPlaces.module.scss";
+import styled from "./PostPlaces.module.css";
 // MUI components
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import { Box } from "@mui/system";
 // Router components
-import {
-  Link,
-  NavLink,
-  Outlet,
-  Route,
-  Routes,
-  useOutlet,
-} from "react-router-dom";
-// Components
-import ImageSlider from "../ImageSlider/ImageSlider";
+import { NavLink, useOutlet } from "react-router-dom";
 
 // Images
 // actual images
@@ -159,7 +150,7 @@ const data = {
   resataurantsData: [],
 };
 
-export const Context = React.createContext({ data });
+export const Context = createContext({ data });
 
 const PostPlaces = () => {
   const outlet = useOutlet();
@@ -185,7 +176,6 @@ const PostPlaces = () => {
         <Box>
           <Container maxWidth="1240px">
             <Context.Provider value={{ Context }}>{outlet}</Context.Provider>
-            {/* <Outlet /> */}
           </Container>
         </Box>
       </Box>

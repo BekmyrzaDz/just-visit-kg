@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 // MUI components
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 // Styles
 import styled from "./PostPlacesTours.module.css";
 // Images
 import like from "../../../../assets/images/like.svg";
 // Carousel component
 import ImageCarousel from "../../ImageCarousel/ImageCarousel";
-
+// Context
 import { Context } from "../PostPlaces";
 
 const PostPlacesTours = () => {
-  const props = React.useContext(Context);
-  // console.log(props);
+  const props = useContext(Context);
 
   const { actual, popular, interestsPlaces } =
     props.Context._currentValue2.data.toursData;
-  // console.log(actual);
 
   return (
     <>
