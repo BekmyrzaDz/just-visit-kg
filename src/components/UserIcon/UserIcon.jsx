@@ -22,18 +22,19 @@ const UserIcon = () => {
     return (
         <Box>
             <Tooltip title="Main-Logo">
-                <Button
-                    id="UserIconButton"
-                    aria-controls={open ? 'UserIconMenu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick}
-                >
-                    <IconButton style={{
-                        background: "#fff",
-                        width: "63px",
-                        height: "63px"
-                    }}>
+                    <Button
+                        sx={{
+                            background: "#fff",
+                            width: "63px",
+                            height: "63px",
+                            borderRadius: "50%"
+                        }}
+                        id="UserIconButton"
+                        aria-controls={open ? 'UserIconMenu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick}
+                    >
                         <img
                             src={profile.avatar ? profile.avatar : userIcon}
                             alt="User Icon"
@@ -42,8 +43,7 @@ const UserIcon = () => {
                                 height: "53px"
                             }}
                         />
-                    </IconButton>
-                </Button>
+                    </Button>
             </Tooltip>
             <Menu
                 id="UserIconMenu"
