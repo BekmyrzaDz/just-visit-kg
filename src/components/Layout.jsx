@@ -81,11 +81,11 @@ const Layout = () => {
             </Box>
           </Box>
         </Container>
-        <Container maxWidth="1240px">
-          <Box sx={{ paddingBottom: "50px" }}>
-            <Outlet />
-          </Box>
-        </Container>
+        {/* <Container maxWidth="1240px"> */}
+        <Box sx={{ paddingBottom: "50px" }}>
+          <Outlet />
+        </Box>
+        {/* </Container> */}
       </main>
     </>
   );
