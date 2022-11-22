@@ -210,9 +210,7 @@ const PostPlaces = () => {
           </Box>
         </Box>
         <Box>
-          <Container maxWidth="1240px">
-            <Context.Provider value={{ Context }}>{outlet}</Context.Provider>
-          </Container>
+          <Context.Provider value={{ Context }}>{outlet}</Context.Provider>
         </Box>
       </Box>
     </>

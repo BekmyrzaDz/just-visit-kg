@@ -20,6 +20,7 @@ import carousel5 from "../assets/images/carousel-5.jpg";
 import saryCheleck from "../assets/images/sary-cheleck-lifehack.jpg";
 // Treacking
 import tracking from "../assets/images/tracking-lifehack.jpg";
+import { Container } from "@mui/system";
 
 const Places = () => {
   const dataPlaces = {
