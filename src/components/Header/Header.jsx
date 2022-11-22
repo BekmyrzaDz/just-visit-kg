@@ -14,6 +14,8 @@ import {Link, NavLink} from "react-router-dom";
 import Select from "./Select/Select";
 import Authorization from "../Authorization/Authorization";
 import {useSelector} from "react-redux";
+import Logout from "../GoogleLogin/Logout";
+import UserIcon from "../UserIcon/UserIcon";
 
 const ButtonCompoent = styled(NavLink)(() => ({
     fontFamily: "Oswald",
@@ -97,7 +99,7 @@ const Header = () => {
                                     },
                                 }}
                             >
-                                Интересные места
+                                Карта
                             </Typography>
                         </MenuItem>
                         <MenuItem sx={{marginRight: "50px"}}>
@@ -115,27 +117,28 @@ const Header = () => {
                                     },
                                 }}
                             >
-                                Блоги пользователей
-                            </Typography>
-                        </MenuItem>
-                        <MenuItem sx={{marginRight: "50px"}}>
-                            <Typography
-                                sx={{
-                                    fontFamily: "Martel Sans",
-                                    fontWeight: 400,
-                                    fontSize: "18px",
-                                    lineHeight: "32.83px",
-                                    borderBottom: "1px solid transparent",
-                                    "&:hover": {
-                                        borderBottom: "1px solid #D8AD83",
-                                        color: "#D8AD83",
-                                        transitionDelay: "0.2s",
-                                    },
-                                }}
-                            >
-                                <Link to="/registration">
-                                    Личный кабинет
-                                </Link>
+                                {profile ? (
+                                        <NavLink
+                                            to="/registration"
+                                            style={{
+                                                textDecoration: "none",
+                                                color: "var(--white)"
+                                            }}
+                                        >
+                                            Личный кабинет
+                                        </NavLink>
+                                    ) :
+                                    (
+                                        <NavLink
+                                            to="/registration"
+                                            style={{
+                                                textDecoration: "none",
+                                                color: "var(--white)"
+                                            }}
+                                        >
+                                            Зарегистрироваться
+                                        </NavLink>
+                                    )}
                             </Typography>
                         </MenuItem>
                         <MenuItem>
@@ -144,60 +147,61 @@ const Header = () => {
                     </Box>
                     <Box
                         sx={{
+                            background: "var(--light-brown)",
+                            display: "flex",
+                            alignItems: "center",
+                            borderRadius: "20px",
+                            marginLeft: "10px",
+                        }}
+                    >
+                        <Input
+                            id="my-input"
+                            aria-describedby="my-helper-text"
+                            disableUnderline={true}
+                            placeholder="о чем хотите узнать?"
+                            sx={{
+                                fontFamily: "Material Sans",
+                                fontSize: "18px",
+                                fontWeight: "400px",
+                                lineHeight: "32.83px",
+                                width: "198px",
+                                background: "var(--white)",
+                                padding: "3px 10px",
+                                borderRadius: "20px",
+                                color: "var(--gray)",
+                            }}
+                        />
+                        <img
+                            src={search}
+                            alt=""
+                            style={{
+                                width: "20px",
+                                height: "20px",
+                                margin: "7px",
+                                cursor: "pointer",
+                            }}
+                        />
+                    </Box>
+                    <Box
+                        sx={{
                             display: "flex",
                             justifyContent: "space-between",
                             alignItems: "center",
                         }}
                     >
-                        <Box
+                        {profile ? (<UserIcon/>) : (<Box
                             sx={{
                                 display: "flex",
                                 justifyContent: "flex-end",
                             }}
                         >
                             <ButtonCompoent variant="contained" onClick={handleClickOpen}>Войти</ButtonCompoent>
-                        </Box>
-                        <Box
-                            sx={{
-                                background: "var(--light-brown)",
-                                display: "flex",
-                                alignItems: "center",
-                                borderRadius: "20px",
-                                marginLeft: "10px",
-                            }}
-                        >
-                            <Input
-                                id="my-input"
-                                aria-describedby="my-helper-text"
-                                disableUnderline={true}
-                                placeholder="о чем хотите узнать?"
-                                sx={{
-                                    fontFamily: "Material Sans",
-                                    fontSize: "18px",
-                                    fontWeight: "400px",
-                                    lineHeight: "32.83px",
-                                    width: "198px",
-                                    background: "var(--white)",
-                                    padding: "3px 10px",
-                                    borderRadius: "20px",
-                                    color: "var(--gray)",
-                                }}
-                            />
-                            <img
-                                src={search}
-                                alt=""
-                                style={{
-                                    width: "20px",
-                                    height: "20px",
-                                    margin: "7px",
-                                    cursor: "pointer",
-                                }}
-                            />
-                        </Box>
+                        </Box>)}
+
                     </Box>
                 </Box>
             </Container>
-            <Dialog
+            {profile ? "" : (<Dialog
                 open={open}
                 onClose={handleClose}
                 PaperProps={{
@@ -216,7 +220,7 @@ const Header = () => {
                 >
                     <Authorization/>
                 </DialogContent>
-            </Dialog>
+            </Dialog>)}
         </AppBar>
     )
 };
