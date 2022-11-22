@@ -17,7 +17,7 @@ function Login() {
                 console.log(response);
                 dispatch(setProfile({
                     user: {
-                        user_id: response.data.user.pk,
+                        user_id: response.data.user["pk"],
                         access_token: response.data.access_token,
                         is_superuser: false,
                         email: response.data.user.email,

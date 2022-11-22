@@ -1,9 +1,15 @@
 import { GoogleLogout } from '@leecheuk/react-google-login'
+import {useDispatch, useSelector} from "react-redux";
+import {setProfile} from "../../redux/reducer";
 
 function Logout() {
 
+    const dispatch = useDispatch();
+    const profile = useSelector(state => state.store);
+
     const onSuccess = () => {
         console.log("Log out successfull!");
+        dispatch(setProfile(null))
     }
 
     return (
