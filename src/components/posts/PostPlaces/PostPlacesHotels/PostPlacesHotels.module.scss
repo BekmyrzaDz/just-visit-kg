@@ -1,0 +1,66 @@
+@import '../../../../styles/variables.scss';
+
+.title {
+  font-family: Oswald, serif;
+  font-weight: 500;
+  font-size: 45px;
+  color: $white;
+  margin-left: 115px;
+}
+
+.gridItem {
+  padding: 0;
+}
+
+.item {
+  width: 310px;
+  height: 322px;
+  border: 1px solid $border-gray;
+  border-radius: 20px;
+  padding: 20px 17px;
+  &Img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  &Descr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &Rating {
+      display: flex;
+      align-items: center;
+      & > .star {
+        margin-right: 5px;
+      }
+      & > .rating {
+        color: $white;
+      }
+    }
+  }
+  &Title {
+    font-family: Martel Sans, serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    color: $white;
+  }
+  &Location {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    & > .img {
+      margin-right: 7px;
+    }
+    & > .city {
+      font-family: Martel Sans, serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 24px;
+      color: $light-brown;
+    }
+  }
+}

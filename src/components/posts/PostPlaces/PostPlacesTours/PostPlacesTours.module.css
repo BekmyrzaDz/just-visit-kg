@@ -1,10 +1,8 @@
-@import '../../../../styles/variables.scss';
-
 .title {
   font-family: Oswald, serif;
   font-weight: 500;
   font-size: 45px;
-  color: $white;
+  color: #FCEEE3;
   margin-left: 115px;
 }
 
@@ -16,23 +14,34 @@
   background-position: center;
   background-size: cover;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 5px;
 }
 
 .itemTop {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .itemTitle {
   font-family: Oswald, serif;
   font-weight: 400;
   font-size: 23px;
-  color: $white;
+  color: #FCEEE3;
   background: linear-gradient(92.99deg, rgba(255, 255, 255, 0.3) 2.14%, rgba(255, 255, 255, 0.3) 48.18%, rgba(255, 255, 255, 0.3) 101.24%);
   border-radius: 20px;
   padding: 5px;
@@ -48,8 +57,12 @@
 }
 
 .itemButtom {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   position: relative;
 }
 
@@ -59,8 +72,8 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 27px;
-  color: $white;
-  background: $dark-blue;
+  color: #FCEEE3;
+  background: #1E2431;
   border: none;
   border-radius: 5px;
   position: absolute;
@@ -68,3 +81,4 @@
   bottom: 30px;
   cursor: pointer;
 }
+/*# sourceMappingURL=PostPlacesTours.module.css.map */

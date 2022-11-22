@@ -7,25 +7,26 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 // Images
 import like from "../../../assets/images/like.svg";
+import carousel1 from "../../../assets/images/carousel-1.jpg";
+import carousel2 from "../../../assets/images/carousel-2.jpg";
+import carousel3 from "../../../assets/images/carousel-3.jpg";
+import carousel4 from "../../../assets/images/carousel-4.jpg";
+import carousel5 from "../../../assets/images/carousel-5.jpg";
+
+import { Box } from "@mui/material";
 
 export default class Responsive extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.log = this.log.bind(this);
-  // }
   render() {
-    const log = (props) => {
-      console.log(props);
-    };
+    const posts = this.props.data;
+    console.log(posts);
 
-    // log();
     var settings = {
       arrows: false,
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 5,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       initialSlide: 0,
       responsive: [
         {
@@ -58,17 +59,33 @@ export default class Responsive extends Component {
     return (
       <div>
         <Slider {...settings}>
-          <div>
-            <div className={styled.item}>
-              <div className={styled.itemTop}>
-                <span className={styled.itemTitle}>Поездка на Ыссык-Куль</span>
-                <img src={like} alt="" className={styled.itemIcon} />
-              </div>
-              <div className={styled.itemButtom}>
-                <button className={styled.button}>Подробнее</button>
+          {posts.map((post) => (
+            <div>
+              <div
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  backgroundImage: `url(${post.img})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  borderRadius: "5px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  paddingTop: "5px",
+                }}
+              >
+                <div className={styled.itemTop}>
+                  <span className={styled.itemTitle}>{post.title}</span>
+                  <img src={like} alt="" className={styled.itemIcon} />
+                </div>
+                <div className={styled.itemButtom}>
+                  <button className={styled.button}>Подробнее</button>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </Slider>
       </div>
     );

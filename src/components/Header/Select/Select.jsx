@@ -19,6 +19,7 @@ export default function SelectSmall() {
         variant="outlined"
         labelId="demo-select"
         id="demo-select"
+        label="Русский"
         value={current}
         onChange={handleChange}
         sx={{
@@ -63,7 +64,7 @@ export default function SelectSmall() {
                 paddingRight: "5px",
               }}
             >
-              English
+              Английский
             </span>
             {/* <img style={{ width: "30px" }} src={usaFlag} alt="" /> */}
           </div>

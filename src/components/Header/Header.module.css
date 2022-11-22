@@ -1,0 +1,15 @@
+.item {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32.83px;
+  border-bottom: 1px solid transparent;
+}
+
+.item:hover {
+  border-bottom: 1px solid #D8AD83;
+  color: #D8AD83;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+/*# sourceMappingURL=Header.module.css.map */
