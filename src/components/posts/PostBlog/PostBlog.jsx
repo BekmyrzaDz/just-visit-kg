@@ -17,8 +17,8 @@ const PostBlog = ({ blogData }) => {
 
   return (
     <>
-      {blogData.map((post) => (
-        <div className={styled.blog}>
+      {blogData.map((post, i) => (
+        <div className={styled.blog} key={i}>
           <Container maxWidth="1240px">
             <div className={styled.blogInner}>
               <Box className={styled.blogLeft}>

@@ -3,7 +3,6 @@ import "../../../index.css";
 import { Box } from "@mui/system";
 
 const ImageSlider = ({ slides }) => {
-  console.log(slides);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const sliderStyles = {

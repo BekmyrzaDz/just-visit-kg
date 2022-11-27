@@ -5,8 +5,9 @@ import { Grid } from "@mui/material";
 import styled from "./PostPlacesTours.module.css";
 // Images
 import like from "../../../../assets/images/like.svg";
-// Carousel component
+// Components
 import ImageCarousel from "../../ImageCarousel/ImageCarousel";
+import Filter from "../Filter/Filter";
 // Context
 import { Context } from "../PostPlaces";
 import { Container } from "@mui/system";
@@ -19,15 +20,16 @@ const PostPlacesTours = () => {
 
   return (
     <>
+      <Filter />
       <section>
         <Container maxWidth="1240px">
-          <h3 className={styled.title}>Актуально</h3>
+          <h3 className={`${styled.title} ${styled.margin}`}>Актуально</h3>
           <ImageCarousel data={actual} />
         </Container>
       </section>
       <section>
         <Container maxWidth="1240px">
-          <h3 className={styled.title}>Популярно</h3>
+          <h3 className={`${styled.title} ${styled.margin}`}>Популярно</h3>
           <ImageCarousel data={popular} />
         </Container>
       </section>
@@ -35,8 +37,8 @@ const PostPlacesTours = () => {
         <Container maxWidth="1240px">
           <h3 className={styled.title}>Интересные места:</h3>
           <Grid container spacing={{ sx: 2, sm: 4, md: 6 }}>
-            {interestsPlaces.map((post) => (
-              <Grid item>
+            {interestsPlaces.map((post, i) => (
+              <Grid item key={i}>
                 <div
                   style={{
                     width: "233px",

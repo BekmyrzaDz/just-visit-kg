@@ -26,8 +26,13 @@ const PostPlacesHotels = () => {
           Интересные места, где вы можете отдохнуть
         </h3>
         <Grid container spacing={{ sx: 2, sm: 4, md: 6 }}>
-          {hotelsData.map((post) => (
-            <Grid item className={styled.gridItem} sx={{ paddingLeft: "0px" }}>
+          {hotelsData.map((post, i) => (
+            <Grid
+              item
+              className={styled.gridItem}
+              sx={{ paddingLeft: "0px" }}
+              key={i}
+            >
               <div className={styled.item}>
                 <div
                   style={{

@@ -42,7 +42,9 @@ export default function SelectSmall() {
             <span
               style={{
                 fontFamily: "Martel Sans",
+                fontWeight: 400,
                 fontSize: "16px",
+                lineHeight: "29px",
                 paddingRight: "5px",
               }}
             >
@@ -60,7 +62,9 @@ export default function SelectSmall() {
             <span
               style={{
                 fontFamily: "Martel Sans",
+                fontWeight: 400,
                 fontSize: "16px",
+                lineHeight: "29px",
                 paddingRight: "5px",
               }}
             >

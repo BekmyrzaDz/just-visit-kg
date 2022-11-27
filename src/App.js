@@ -11,6 +11,9 @@ import Blog from "./pages/Blog";
 import { useEffect } from "react";
 import { gapi } from "gapi-script";
 import Registration from "./components/Registration/Registration";
+import NotFound from "./pages/NotFound";
+import Map from "./pages/Map/Map";
+import MapLayout from "./pages/Map/MapLayout";
 
 function App() {
   useEffect(() => {
@@ -26,17 +29,21 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/registration" element={<Registration />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/articles" element={<Article />} />
-        <Route path="/places/*" element={<Places />}>
+        <Route path="articles" element={<Article />} />
+        <Route path="places/*" element={<Places />}>
           <Route path="tours" element={<PostPlacesTours />} />
           <Route path="hotels" element={<PostPlacesHotels />} />
           <Route path="restaurants" element={<PostPlacesRestaurants />} />
         </Route>
-        <Route path="/blog" element={<Blog />} />
+        <Route path="blog" element={<Blog />} />
       </Route>
+      <Route path="/map" element={<MapLayout />}>
+        <Route index element={<Map />} />
+      </Route>
+      <Route path="/registration" element={<Registration />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

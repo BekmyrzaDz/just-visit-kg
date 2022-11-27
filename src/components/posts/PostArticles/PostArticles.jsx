@@ -19,13 +19,14 @@ const PostArticle = ({ data }) => {
 
   return (
     <>
-      {data.map((post) => (
+      {data.map((post, i) => (
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             marginBottom: "42px",
           }}
+          key={i}
         >
           <Typography
             variant="h2"

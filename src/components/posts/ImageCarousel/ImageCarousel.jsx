@@ -7,18 +7,9 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 // Images
 import like from "../../../assets/images/like.svg";
-import carousel1 from "../../../assets/images/carousel-1.jpg";
-import carousel2 from "../../../assets/images/carousel-2.jpg";
-import carousel3 from "../../../assets/images/carousel-3.jpg";
-import carousel4 from "../../../assets/images/carousel-4.jpg";
-import carousel5 from "../../../assets/images/carousel-5.jpg";
-
-import { Box } from "@mui/material";
-
 export default class Responsive extends Component {
   render() {
     const posts = this.props.data;
-    console.log(posts);
 
     var settings = {
       arrows: false,
@@ -59,8 +50,8 @@ export default class Responsive extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {posts.map((post) => (
-            <div>
+          {posts.map((post, i) => (
+            <div key={i}>
               <div
                 style={{
                   width: "300px",

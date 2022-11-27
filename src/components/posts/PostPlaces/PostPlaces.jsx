@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect } from "react";
 // Styles
 import "../../../index.css";
 import styled from "./PostPlaces.module.css";
@@ -6,7 +6,13 @@ import styled from "./PostPlaces.module.css";
 import { Container } from "@mui/material";
 import { Box } from "@mui/system";
 // Router components
-import { NavLink, useOutlet } from "react-router-dom";
+import {
+  NavLink,
+  useMatch,
+  useNavigate,
+  useOutlet,
+  useParams,
+} from "react-router-dom";
 
 // Images
 // actual images
@@ -189,6 +195,17 @@ const data = {
 export const Context = createContext({ data });
 
 const PostPlaces = () => {
+  const navigate = useNavigate();
+
+  const params = useParams();
+
+  const match = useMatch("/places");
+  console.log(match);
+
+  useEffect(() => {
+    navigate("/places/tours");
+  }, []);
+
   const outlet = useOutlet();
 
   const setActive = ({ isActive }) => (isActive ? styled.active : styled.link);

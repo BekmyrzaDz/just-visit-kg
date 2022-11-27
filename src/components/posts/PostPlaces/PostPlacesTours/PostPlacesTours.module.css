@@ -2,7 +2,10 @@
   font-family: Oswald, serif;
   font-weight: 500;
   font-size: 45px;
-  color: #FCEEE3;
+  color: #fceee3;
+}
+
+.margin {
   margin-left: 115px;
 }
 
@@ -41,7 +44,7 @@
   font-family: Oswald, serif;
   font-weight: 400;
   font-size: 23px;
-  color: #FCEEE3;
+  color: #fceee3;
   background: linear-gradient(92.99deg, rgba(255, 255, 255, 0.3) 2.14%, rgba(255, 255, 255, 0.3) 48.18%, rgba(255, 255, 255, 0.3) 101.24%);
   border-radius: 20px;
   padding: 5px;
@@ -67,13 +70,13 @@
 }
 
 .button {
-  font-family: 'Martel Sans';
+  font-family: "Martel Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 27px;
-  color: #FCEEE3;
-  background: #1E2431;
+  color: #fceee3;
+  background: #1e2431;
   border: none;
   border-radius: 5px;
   position: absolute;

@@ -1,27 +1,9 @@
 import React from "react";
 import styles from "./Layout.module.css";
-import { Button, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Header from "./Header/Header";
-import { Link, NavLink, Outlet } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink, Outlet } from "react-router-dom";
 import { Box } from "@mui/system";
-
-const ButtonComponent = styled(Link)(() => ({
-  fontFamily: "Oswald",
-  borderRadius: "20px",
-  border: "1px solid #A97155",
-  fontSize: "20px",
-  padding: "10px 26px",
-  lineHeight: "24px",
-  color: "#fff",
-  background: "#1E2431",
-  textDecoration: "none",
-  // "&:hover": {
-  //   background: "#D8AD83",
-  //   color: "#000",
-  //   border: "1px solid #000",
-  // },
-}));
 
 const Layout = () => {
   const setActive = ({ isActive }) => (isActive ? styles.active : styles.link);

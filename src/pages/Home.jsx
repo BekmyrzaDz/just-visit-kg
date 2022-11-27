@@ -1,7 +1,11 @@
-import React from "react";
+import { useEffect } from "react";
+import { redirect, useNavigate } from "react-router-dom";
 
 const Home = () => {
-  return <div>Home page</div>;
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/articles");
+  }, []);
 };
 
 export default Home;

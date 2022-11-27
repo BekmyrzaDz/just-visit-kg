@@ -1,12 +1,26 @@
+@import "../../styles/variables.scss";
+
 .item {
-  font-family: Oswald, sans-serif;
+  font-family: Martel Sans, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 32.83px;
   border-bottom: 1px solid transparent;
+  color: $white;
+  text-decoration: none;
   &:hover {
-    border-bottom: 1px solid #D8AD83;
-    color: #D8AD83;
+    border-bottom: 1px solid $light-brown;
+    color: $light-brown;
     transition-delay: 0.2s;
   }
+}
+
+.active {
+  font-family: Martel Sans, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32.83px;
+  text-decoration: none;
+  border-bottom: 1px solid $light-brown;
+  color: $light-brown;
 }
