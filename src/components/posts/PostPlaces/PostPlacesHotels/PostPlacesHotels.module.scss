@@ -1,4 +1,4 @@
-@import '../../../../styles/variables.scss';
+@import "../../../../styles/variables.scss";
 
 .title {
   font-family: Oswald, serif;
@@ -12,8 +12,10 @@
 }
 
 .item {
-  width: 310px;
-  height: 322px;
+  width: 340px;
+  height: 347px;
+  // width: 310px;
+  // height: 322px;
   border: 1px solid $border-gray;
   border-radius: 20px;
   padding: 20px 17px;

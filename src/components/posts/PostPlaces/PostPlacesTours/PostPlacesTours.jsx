@@ -34,9 +34,14 @@ const PostPlacesTours = () => {
         </Container>
       </section>
       <section>
-        <Container maxWidth="1240px">
+        <Container
+          maxWidth="1225px"
+          sx={{
+            nargin: "0 auto",
+          }}
+        >
           <h3 className={styled.title}>Интересные места:</h3>
-          <Grid container spacing={{ sx: 2, sm: 4, md: 6 }}>
+          <Grid container spacing={{ sx: 2, sm: 6, md: 9 }}>
             {interestsPlaces.map((post, i) => (
               <Grid item key={i}>
                 <div
@@ -50,6 +55,7 @@ const PostPlacesTours = () => {
                     borderRadius: "5px",
                     display: "flex",
                     flexDirection: "column",
+                    justifyItems: "center",
                     justifyContent: "space-between",
                     paddingTop: "5px",
                   }}

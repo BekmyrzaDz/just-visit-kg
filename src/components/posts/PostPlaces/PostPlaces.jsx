@@ -197,11 +197,6 @@ export const Context = createContext({ data });
 const PostPlaces = () => {
   const navigate = useNavigate();
 
-  const params = useParams();
-
-  const match = useMatch("/places");
-  console.log(match);
-
   useEffect(() => {
     navigate("/places/tours");
   }, []);
