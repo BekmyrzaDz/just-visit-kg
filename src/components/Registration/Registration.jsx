@@ -9,6 +9,7 @@ import {useEffect} from "react";
 import {setProfile} from "../../redux/reducer";
 import {Link, useNavigate} from "react-router-dom"
 import "../../App.css"
+import {useCookies} from "react-cookie";
 
 
 const validationSchema = yup.object({
@@ -37,7 +38,8 @@ const Registration = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {profile} = useSelector(state => state.store);
+    const {profile} = useSelector(state => state.user);
+    const [cookie, setCookie] = useCookies(['token'])
 
     useEffect(() => {
         if (profile) navigate('/');
@@ -48,7 +50,6 @@ const Registration = () => {
             firstName: "",
             lastName: "",
             email: "",
-            phone: "",
             password: "",
             checkPassword: "",
         },
@@ -59,7 +60,6 @@ const Registration = () => {
                 last_name: values.lastName,
                 password: values.password,
                 email: values.email,
-                phone: values.phone,
             })
                 .then(async (res) => {
                     await axios.post(process.env.REACT_APP_BASE_URL + "users/login/personal/", {
@@ -67,6 +67,8 @@ const Registration = () => {
                         password: values.password,
                     }).then(response => {
                         console.log(response);
+                        setCookie('token', response.data.access);
+
                         dispatch(setProfile({
                             user: {
                                 user_id: response.data.user_id,
@@ -153,24 +155,6 @@ const Registration = () => {
                             onChange={formik.handleChange}
                             error={formik.touched.lastName && Boolean(formik.errors.lastName)}
                             helperText={formik.touched.lastName && formik.errors.lastName}
-                            className="input"
-                            sx={{
-                                marginBottom: "20px",
-                                borderRadius: "10px",
-
-                            }}
-                        />
-                        <TextField
-                            fullWidth
-                            id="phone"
-                            name="phone"
-                            label="Phone"
-                            type="text"
-                            placeholder=" "
-                            value={formik.values.phone}
-                            onChange={formik.handleChange}
-                            error={formik.touched.phone && Boolean(formik.errors.phone)}
-                            helperText={formik.touched.phone && formik.errors.phone}
                             className="input"
                             sx={{
                                 marginBottom: "20px",

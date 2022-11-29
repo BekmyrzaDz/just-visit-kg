@@ -1,18 +1,18 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-
 const initialState = {
     profile: null,
-    status: "Active",
+    status: false,
     error: null
 }
 
 export const counterSlice = createSlice({
-    name: 'store',
+    name: 'user',
     initialState,
     reducers: {
         setProfile: (state, action) => {
             state.profile = action.payload;
+            state.status = !!action.payload;
         }
     }
 })

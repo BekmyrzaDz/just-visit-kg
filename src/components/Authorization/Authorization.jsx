@@ -7,6 +7,7 @@ import logo from "../../assets/images/Main-Logo.svg"
 import {useDispatch, useSelector} from "react-redux";
 import {setProfile} from "../../redux/reducer";
 import "../Header/Header.css"
+import {useCookies} from "react-cookie";
 
 
 const validationSchema = yup.object({
@@ -22,7 +23,8 @@ const validationSchema = yup.object({
 
 const Authorization = () => {
     const dispatch = useDispatch();
-    const {profile} = useSelector(state => state.store);
+    const {profile} = useSelector(state => state.user);
+    const [cookie, setCookie] = useCookies(['token'])
 
     const formik = useFormik({
         initialValues: {
@@ -36,6 +38,10 @@ const Authorization = () => {
                 password: values.password,
             }).then(res => {
                 console.log(res);
+                setCookie('token', {
+                    access: res.data.access,
+
+                });
                 dispatch(setProfile({
                     user: {
                         user_id: res.data.user_id,

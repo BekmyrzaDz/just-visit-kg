@@ -3,11 +3,12 @@ import Logout from "../GoogleLogin/Logout";
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import userIcon from "../../assets/images/UserIcon.svg"
+import "./UserIcon.css"
 
 
 const UserIcon = () => {
-    const {profile} = useSelector(state => state.store);
-    console.log(profile.user);
+    const {profile} = useSelector(state => state.user);
+    console.log(profile.user.avatar);
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl);
 
@@ -23,8 +24,8 @@ const UserIcon = () => {
         <Box>
             <Tooltip title="Main-Logo">
                     <Button
+                        className={profile.user.avatar? "": "noAvatar"}
                         sx={{
-                            background: "#fff",
                             width: "63px",
                             height: "63px",
                             borderRadius: "50%"
@@ -36,9 +37,10 @@ const UserIcon = () => {
                         onClick={handleClick}
                     >
                         <img
-                            src={profile.avatar ? profile.avatar : userIcon}
+                            src={profile.user.avatar ? profile.user.avatar : userIcon}
                             alt="User Icon"
                             style={{
+                                borderRadius: "50%",
                                 width: "53px",
                                 height: "53px"
                             }}

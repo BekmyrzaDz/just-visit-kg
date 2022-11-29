@@ -1,15 +1,18 @@
 import { GoogleLogout } from '@leecheuk/react-google-login'
 import {useDispatch, useSelector} from "react-redux";
 import {setProfile} from "../../redux/reducer";
+import {useCookies} from "react-cookie";
 
 function Logout() {
 
     const dispatch = useDispatch();
     const profile = useSelector(state => state.store);
+    const [cookie, setCookie] = useCookies(['token']);
 
     const onSuccess = () => {
         console.log("Log out successfull!");
         dispatch(setProfile(null))
+        setCookie('token', null);
     }
 
     return (

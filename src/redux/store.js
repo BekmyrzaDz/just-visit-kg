@@ -3,6 +3,6 @@ import reducer from "./reducer"
 
 export const store = configureStore({
     reducer: {
-        store: reducer
+        user: reducer
     }
 })
