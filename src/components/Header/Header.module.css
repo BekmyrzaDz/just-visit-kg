@@ -6,13 +6,13 @@
   border-bottom: 1px solid transparent;
   color: #fceee3;
   text-decoration: none;
+  -webkit-transition: color 0.2s 0.02s easy;
+  transition: color 0.2s 0.02s easy;
 }
 
 .item:hover {
   border-bottom: 1px solid #d8ad83;
   color: #d8ad83;
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
 }
 
 .active {

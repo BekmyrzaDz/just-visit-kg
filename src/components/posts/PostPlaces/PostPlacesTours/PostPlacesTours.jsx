@@ -11,6 +11,7 @@ import Filter from "../Filter/Filter";
 // Context
 import { Context } from "../PostPlaces";
 import { Container } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const PostPlacesTours = () => {
   const props = useContext(Context);
@@ -48,7 +49,7 @@ const PostPlacesTours = () => {
                   style={{
                     width: "233px",
                     height: "233px",
-                    backgroundImage: `url(${post.img})`,
+                    backgroundImage: `url(${post.cover})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
@@ -65,7 +66,7 @@ const PostPlacesTours = () => {
                     <img src={like} alt="" className={styled.itemIcon} />
                   </div>
                   <div className={styled.itemButtom}>
-                    <button className={styled.button}>Подробнее</button>
+                    <Link className={styled.button}>Подробнее</Link>
                   </div>
                 </div>
               </Grid>

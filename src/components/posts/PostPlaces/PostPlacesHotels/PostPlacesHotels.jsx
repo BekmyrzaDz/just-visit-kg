@@ -38,8 +38,6 @@ const PostPlacesHotels = () => {
                   style={{
                     width: "300px",
                     height: "260px",
-                    // width: "275px",
-                    // height: "230px",
                   }}
                 >
                   <div

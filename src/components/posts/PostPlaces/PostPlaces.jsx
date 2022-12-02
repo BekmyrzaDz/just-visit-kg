@@ -3,16 +3,9 @@ import React, { createContext, useEffect } from "react";
 import "../../../index.css";
 import styled from "./PostPlaces.module.css";
 // MUI components
-import { Container } from "@mui/material";
 import { Box } from "@mui/system";
 // Router components
-import {
-  NavLink,
-  useMatch,
-  useNavigate,
-  useOutlet,
-  useParams,
-} from "react-router-dom";
+import { NavLink, useNavigate, useOutlet } from "react-router-dom";
 
 // Images
 // actual images
@@ -49,119 +42,194 @@ import hotel9 from "../../../assets/images/hotel9.jpg";
 import hotel10 from "../../../assets/images/hotel10.jpg";
 import hotel11 from "../../../assets/images/hotel11.jpg";
 import hotel12 from "../../../assets/images/hotel12.jpg";
+// user review images
+import userReview1 from "../../../assets/images/user-review-1.svg";
+import userReview2 from "../../../assets/images/user-review-2.svg";
+import userReview3 from "../../../assets/images/user-review-3.svg";
+import star from "../../../assets/images/star.svg";
+// hotels issyk-kul
+import hotelsIssykKul1 from "../../../assets/images/hotels-issyk-kul-1.jpg";
+import hotelsIssykKul2 from "../../../assets/images/hotels-issyk-kul-2.jpg";
+import hotelsIssykKul3 from "../../../assets/images/hotels-issyk-kul-3.jpg";
+import hotelsIssykKul4 from "../../../assets/images/hotels-issyk-kul-4.jpg";
 
 const data = {
   toursData: {
     actual: [
       {
+        id: 1,
         title: "Поездка на Ыссык-Куль",
-        img: carousel1,
+        cover: carousel1,
+        images: [
+          { url: carousel2 },
+          { url: carousel1 },
+          { url: carousel3 },
+          { url: carousel4 },
+          { url: carousel3 },
+        ],
+        description:
+          "Иссы́к-Ку́ль (кирг. Ысык-Көл — «горячее озеро») — бессточное озеро в Киргизии. Входит в 30 крупнейших по площади озёр мира и занимает седьмое место в списке самых глубоких озёр. Расположено в северо-восточной части республики, между хребтами Северного Тянь-Шаня: Кюнгёй-Ала-Тоо и Терскей Ала-Тоо на высоте 1608 метров над уровнем моря[1].Озеро и его окрестности с 2001 года включены во всемирную сеть биосферных заповедников (азиатско-тихоокеанская часть); в Рамсарском списке водно-болотных угодий с 1976 года. Озеро бессточное, в него впадает до 80 сравнительно небольших притоков. Реки полноводны в конце весны и летом. Из них наибольшими являются Тюп и Джергалан, впадающие с востока. Питание рек смешанное, с преобладанием талого стока — снегового и ледникового[1]. В западной части к озеру очень близко подходит река Чу, которая по протоке Кутемалды длиной в шесть километров иногда отдаёт ему часть своих вод во время весенних половодий. Уровень воды в Иссык-Куле циклически меняется (то поднимается, то опускается); цикл происходит в течение нескольких десятилетий. Вода голубого цвета, солоноватая (минерализация — 5,8—5,9 ‰). Прозрачность до 20 метров летом и 47 метров зимой[1].",
+        reviewsData: {
+          title: "Отзывы",
+          reviews: [
+            {
+              user: {
+                nickName: "Alexandr228",
+                img: userReview1,
+                rating: "5,0",
+                star: star,
+              },
+              review:
+                "На пляже мы катались на американских горках, а в последний день прокатились на парашюте! Это было просто невероятно! Открывается замечательный вид на озеро и это ни с чем не сравнится! В общем, домой мы вернулись счастливые, загорелые, с кучей положительных эмоций!",
+            },
+            {
+              user: {
+                nickName: "Maksim_xx",
+                img: userReview2,
+                rating: "5,0",
+                star: star,
+              },
+              review:
+                "Озеро находится на высоте примерно 1600 метров над уровнем моря. Кто приезжает в первый раз, тому вода кажется прохладной. Но потом привыкаешь и начинаешь понимать, что купаясь в озере приобретаешь новые силы и здоровье. Особенно полезно купаться по утрам, когда всходит солнце. В это время разность температур воздуха и воды таковы, что в воде ощущаешь большой прилив сил. Приезжать на Иссык-Куль лучше в июле-августе. Но даже в это время бывает по вечерам прохладно, так как озеро расположено среди гор. Рядом с озером, где бы вы не находились, всегда есть красивые ущелья, в которых надо обязательно побывать: открывается панорамный вид на озеро, наблюдается интересный эффект - кажется, что граница воды выше земли. К тому же, во многих ущельях красивые виды речек, елей, камней, сочетающихся в гармоничной пропорции друг с другом. Указала время....",
+            },
+            {
+              user: {
+                nickName: "Alexandra228",
+                img: userReview3,
+                rating: "2,0",
+                star: star,
+              },
+              review:
+                "Вода хорошая не спорю, но очень все дорогое. Сервис очень плохой! С Чулпон оты вечером после 8 часов вечера никуда не уедешь на такси. Такси не останавливается. В кафе еда где-то вкусная, где-то нет. Только 1-2 кафе где еда нормальная и вкусная в центре Чолпон оты. Кафе 'золотая рыбка' кроме бризоли и вина ничего нет вкусного. Главный официант (так как менеджер у них не предусмотрен) и бармен не могли мне посчитать сколько стоит 1 литр вина. 120 мл стоит 100 сом. И все не могли посчитать. Шашлыки у них сухие, не держали в маринаде. Официанты плохо обслуживают. Приходилось за вилками и тарелками самой ходить. Официант не успевал и говорил что у меня с вами 3 стола. Уксус 10% ещё разводят водой. К шашлыкам лук не падают, а если нужен лук плати отдельно за него. Ок, заказываем лук, приносят без уксуса и нарубленный как дрова. Хоть там цены выше чем в других местах. Обслуживание как в Ташкенте 10-15 %...",
+            },
+          ],
+        },
+        hotelsAndRestaurantsData: {
+          title: "Отели и рестораны поблизости в этом месте",
+          hotelsAndRestaurants: [
+            { title: "Центр отдыха Каприз", cover: hotelsIssykKul1 },
+            { title: "Hillside Kara-Kol", cover: hotelsIssykKul2 },
+            { title: "Мурас", cover: hotelsIssykKul3 },
+            { title: "Отель Маданур", cover: hotelsIssykKul4 },
+            { title: "Центр отдыха Каприз", cover: hotelsIssykKul1 },
+            { title: "Hillside Kara-Kol", cover: hotelsIssykKul2 },
+            { title: "Мурас", cover: hotelsIssykKul3 },
+            { title: "Отель Маданур", cover: hotelsIssykKul4 },
+          ],
+        },
       },
       {
+        id: 2,
         title: "Ущелье Чон-Кемин",
-        img: carousel2,
+        cover: carousel2,
       },
       {
+        id: 3,
         title: "Ущелье Чункурчак",
-        img: carousel3,
+        cover: carousel3,
       },
       {
+        id: 4,
         title: "Кель-Суу",
-        img: carousel4,
+        cover: carousel4,
       },
 
       {
+        id: 5,
         title: "Поездка на Ыссык-Куль",
-        img: carousel1,
+        cover: carousel1,
       },
       {
+        id: 6,
         title: "Ущелье Чон-Кемин",
-        img: carousel2,
+        cover: carousel2,
       },
       {
+        id: 7,
         title: "Ущелье Чункурчак",
-        img: carousel3,
+        cover: carousel3,
       },
       {
+        id: 8,
         title: "Кель-Суу",
-        img: carousel4,
+        cover: carousel4,
       },
     ],
     popular: [
       {
         title: "Ала-Арча на целый день",
-        img: popularCarousel1,
+        cover: popularCarousel1,
       },
       {
         title: "Ущелье Чон-Кемин",
-        img: popularCarousel2,
+        cover: popularCarousel2,
       },
       {
         title: "Ущелье Чункурчак",
-        img: popularCarousel3,
+        cover: popularCarousel3,
       },
       {
         title: "Кель-Суу",
-        img: popularCarousel4,
+        cover: popularCarousel4,
       },
 
       {
         title: "Поездка на Ыссык-Куль",
-        img: popularCarousel1,
+        cover: popularCarousel1,
       },
       {
         title: "Ущелье Чон-Кемин",
-        img: popularCarousel2,
+        cover: popularCarousel2,
       },
       {
         title: "Ущелье Чункурчак",
-        img: popularCarousel3,
+        cover: popularCarousel3,
       },
       {
         title: "Кель-Суу",
-        img: popularCarousel4,
+        cover: popularCarousel4,
       },
     ],
     interestsPlaces: [
       {
         title: "Кара-Кол",
-        img: interestPlacesCarousel1,
+        cover: interestPlacesCarousel1,
       },
       {
         title: "Суусамырская долина",
-        img: interestPlacesCarousel2,
+        cover: interestPlacesCarousel2,
       },
       {
         title: "Исторический музей",
-        img: interestPlacesCarousel3,
+        cover: interestPlacesCarousel3,
       },
       {
         title: "Мавзолей Гувбез Манаса",
-        img: interestPlacesCarousel4,
+        cover: interestPlacesCarousel4,
       },
       {
         title: "Дунганская мечеть в Караколе",
-        img: interestPlacesCarousel5,
+        cover: interestPlacesCarousel5,
       },
       {
         title: "Башня Бурана",
-        img: interestPlacesCarousel6,
+        cover: interestPlacesCarousel6,
       },
       {
         title: "Рух-Ордо",
-        img: interestPlacesCarousel7,
+        cover: interestPlacesCarousel7,
       },
       {
         title: "Прекрасный Сон-Куль",
-        img: interestPlacesCarousel8,
+        cover: interestPlacesCarousel8,
       },
       {
         title: "Ореховый лес Арстанбап",
-        img: interestPlacesCarousel9,
+        cover: interestPlacesCarousel9,
       },
       {
         title: "Горы Тянь-Шань",
-        img: interestPlacesCarousel10,
+        cover: interestPlacesCarousel10,
       },
     ],
   },

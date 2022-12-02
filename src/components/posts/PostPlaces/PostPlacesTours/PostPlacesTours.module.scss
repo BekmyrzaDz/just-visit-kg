@@ -67,8 +67,15 @@
   background: $dark-blue;
   border: none;
   border-radius: 5px;
+  padding: 5px 15px;
+  text-decoration: none;
+  transition: color 0.2s 0.02s easy;
   position: absolute;
   right: 44px;
   bottom: 30px;
   cursor: pointer;
+  &:hover {
+    color: $dark-blue;
+    background: $light-brown;
+  }
 }

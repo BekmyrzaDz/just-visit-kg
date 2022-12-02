@@ -1,0 +1,32 @@
+@import "../../../../../../styles/variables.scss";
+
+.title {
+  color: $white;
+  font-family: Oswald;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.onBack {
+  font-family: Martel Sans;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  color: $light-white;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
+
+.descr {
+  padding: 37px 46px 62px 18px;
+  & > .description {
+    font-family: Martel Sans;
+    font-weight: 400;
+    font-size: 16px;
+    color: $white;
+  }
+}

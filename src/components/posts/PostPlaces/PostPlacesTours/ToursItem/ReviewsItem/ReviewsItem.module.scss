@@ -1,0 +1,62 @@
+@import "../../../../../../styles/variables.scss";
+
+.title {
+  color: $white;
+  font-family: Oswald;
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.parent {
+  border: 1px solid $border-gray;
+  border-left: none;
+  border-right: none;
+  &Inner {
+    margin: 75px 0;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  &img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  &NickName {
+    font-family: Martel Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 33px;
+    color: $white;
+    margin: 0 20px;
+  }
+  & > .rating {
+    display: flex;
+  }
+  & .ratingStar {
+    width: 25px;
+    height: 25px;
+  }
+  & .ratingNumber {
+    font-family: Martel Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 33px;
+    color: $white;
+    margin-left: 5px;
+  }
+}
+
+.review {
+  &Text {
+    font-family: Martel Sans;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27px;
+    color: $white;
+  }
+}
