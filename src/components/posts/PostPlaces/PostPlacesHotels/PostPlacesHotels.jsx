@@ -22,11 +22,9 @@ const PostPlacesHotels = () => {
   return (
     <section>
       <Container maxWidth="1410px">
-        <h3 className={styled.title}>
-          Интересные места, где вы можете отдохнуть
-        </h3>
+        <h3 className={styled.title}>{hotelsData.title}</h3>
         <Grid container spacing={{ sx: 2, sm: 3, md: 4 }}>
-          {hotelsData.map((post, i) => (
+          {hotelsData.hotels.map((post, i) => (
             <Grid
               item
               className={styled.gridItem}

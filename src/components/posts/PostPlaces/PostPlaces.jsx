@@ -42,6 +42,19 @@ import hotel9 from "../../../assets/images/hotel9.jpg";
 import hotel10 from "../../../assets/images/hotel10.jpg";
 import hotel11 from "../../../assets/images/hotel11.jpg";
 import hotel12 from "../../../assets/images/hotel12.jpg";
+// interest places images
+import restaurants1 from "../../../assets/images/restaurants-img-1.jpg";
+import restaurants2 from "../../../assets/images/restaurants-img-2.jpg";
+import restaurants3 from "../../../assets/images/restaurants-img-3.jpg";
+import restaurants4 from "../../../assets/images/restaurants-img-4.jpg";
+import restaurants5 from "../../../assets/images/restaurants-img-5.webp";
+import restaurants6 from "../../../assets/images/restaurants-img-6.jpg";
+import restaurants7 from "../../../assets/images/restaurants-img-7.jpg";
+import restaurants8 from "../../../assets/images/restaurants-img-8.jpg";
+import restaurants9 from "../../../assets/images/restaurants-img-9.jpg";
+import restaurants10 from "../../../assets/images/restaurants-img-10.jpg";
+import restaurants11 from "../../../assets/images/restaurants-img-11.jpg";
+import restaurants12 from "../../../assets/images/restaurants-img-12.jpg";
 // user review images
 import userReview1 from "../../../assets/images/user-review-1.svg";
 import userReview2 from "../../../assets/images/user-review-2.svg";
@@ -233,31 +246,100 @@ const data = {
       },
     ],
   },
-  hotelsData: [
-    { title: "Orion Hotel", img: hotel1, rating: "5,0", location: "Бишкек" },
-    { title: "Sheraton", img: hotel2, rating: "4,5", location: "Бишкек" },
-    { title: "Novotel", img: hotel3, rating: "5,0", location: "Бишкек" },
-    { title: "Jannat Regency", img: hotel4, rating: "4,5", location: "Бишкек" },
-    { title: "Ambassador", img: hotel5, rating: "4,5", location: "Бишкек" },
-    {
-      title: "Ramada by Wyndham",
-      img: hotel6,
-      rating: "4,5",
-      location: "Бишкек",
-    },
-    { title: "City Hotel", img: hotel7, rating: "4,5", location: "Бишкек" },
-    { title: "Onyx Hotel", img: hotel8, rating: "4,0", location: "Бишкек" },
-    { title: "Soluxe Hotel", img: hotel9, rating: "4,5", location: "Бишкек" },
-    { title: "Madison Ave", img: hotel10, rating: "4,5", location: "Бишкек" },
-    {
-      title: "Silk Road lodge",
-      img: hotel11,
-      rating: "4,0",
-      location: "Бишкек",
-    },
-    { title: "Grand Hotel", img: hotel12, rating: "4,5", location: "Бишкек" },
-  ],
-  resataurantsData: [],
+  hotelsData: {
+    title: "Интересные места, где вы можете отдохнуть",
+    hotels: [
+      { title: "Orion Hotel", img: hotel1, rating: "5,0", location: "Бишкек" },
+      { title: "Sheraton", img: hotel2, rating: "4,5", location: "Бишкек" },
+      { title: "Novotel", img: hotel3, rating: "5,0", location: "Бишкек" },
+      {
+        title: "Jannat Regency",
+        img: hotel4,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      { title: "Ambassador", img: hotel5, rating: "4,5", location: "Бишкек" },
+      {
+        title: "Ramada by Wyndham",
+        img: hotel6,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      { title: "City Hotel", img: hotel7, rating: "4,5", location: "Бишкек" },
+      { title: "Onyx Hotel", img: hotel8, rating: "4,0", location: "Бишкек" },
+      { title: "Soluxe Hotel", img: hotel9, rating: "4,5", location: "Бишкек" },
+      { title: "Madison Ave", img: hotel10, rating: "4,5", location: "Бишкек" },
+      {
+        title: "Silk Road lodge",
+        img: hotel11,
+        rating: "4,0",
+        location: "Бишкек",
+      },
+      { title: "Grand Hotel", img: hotel12, rating: "4,5", location: "Бишкек" },
+    ],
+  },
+  restaurantsData: {
+    title: "Интересные места, где вы можете вкусно поесть",
+    restaurants: [
+      { title: "Супара", img: restaurants1, rating: "5,0", location: "Бишкек" },
+      { title: "Фаиза", img: restaurants2, rating: "4,5", location: "Бишкек" },
+      {
+        title: "Чайхана Navat",
+        img: restaurants3,
+        rating: "5,0",
+        location: "Бишкек",
+      },
+      {
+        title: "China town",
+        img: restaurants4,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      {
+        title: "Облако 53",
+        img: restaurants5,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      {
+        title: "The most",
+        img: restaurants6,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      { title: "Cyclon", img: restaurants7, rating: "4,5", location: "Бишкек" },
+      {
+        title: "Arzu Grand",
+        img: restaurants8,
+        rating: "4,0",
+        location: "Бишкек",
+      },
+      {
+        title: "Panda Cofee",
+        img: restaurants9,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      {
+        title: "Дубровский",
+        img: restaurants10,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+      {
+        title: "Baan Baan Thai",
+        img: restaurants11,
+        rating: "4,0",
+        location: "Бишкек",
+      },
+      {
+        title: "Bellagio Cofee",
+        img: restaurants12,
+        rating: "4,5",
+        location: "Бишкек",
+      },
+    ],
+  },
 };
 
 export const Context = createContext({ data });
