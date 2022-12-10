@@ -41,6 +41,7 @@ const Header = () => {
 
     useEffect(() => {
         if (cookie.token) {
+            console.log(cookie.token)
             axios.post(process.env.REACT_APP_BASE_URL + "users/jwt/token/verify", {
                 token: cookie.token
             }).then(res => {
@@ -106,7 +107,7 @@ const Header = () => {
                         </MenuItem>
                         <MenuItem sx={{marginRight: "50px"}}>
                             {profile ? (
-                                <NavLink to="/registration" className={setActive}>
+                                <NavLink to="/change-password" className={setActive}>
                                     Личный кабинет
                                 </NavLink>
                             ) : (

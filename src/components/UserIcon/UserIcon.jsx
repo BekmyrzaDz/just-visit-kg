@@ -8,7 +8,6 @@ import "./UserIcon.css"
 
 const UserIcon = () => {
     const {profile} = useSelector(state => state.user);
-    console.log(profile.user.avatar);
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl);
 
@@ -24,7 +23,8 @@ const UserIcon = () => {
         <Box>
             <Tooltip title="Main-Logo">
                     <Button
-                        className={profile.user.avatar? "": "noAvatar"}
+                        //profile.user.avatar? "": "noAvatar"
+                        className={"noAvatar"}
                         sx={{
                             width: "63px",
                             height: "63px",
@@ -37,7 +37,8 @@ const UserIcon = () => {
                         onClick={handleClick}
                     >
                         <img
-                            src={profile.user.avatar ? profile.user.avatar : userIcon}
+                            //profile.user.avatar ? profile.user.avatar : userIcon
+                            src={userIcon}
                             alt="User Icon"
                             style={{
                                 borderRadius: "50%",

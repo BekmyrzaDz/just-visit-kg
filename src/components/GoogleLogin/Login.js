@@ -29,7 +29,6 @@ function Login() {
                         last_name: response.data.user.last_name,
                         refresh_token: response.data.refresh_token,
                         expires_day: jwtDecode(response.data.access_token).exp,
-                        avatar: res.profileObj.imageUrl
                     }
                 }))
             })

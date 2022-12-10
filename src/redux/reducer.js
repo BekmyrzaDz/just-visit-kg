@@ -13,6 +13,7 @@ export const counterSlice = createSlice({
         setProfile: (state, action) => {
             state.profile = action.payload;
             state.status = !!action.payload;
+            console.log(action.payload)
         }
     }
 })
