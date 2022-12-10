@@ -8,10 +8,10 @@
   border-bottom: 1px solid transparent;
   color: $white;
   text-decoration: none;
+  transition: color 0.2s 0.02s easy;
   &:hover {
     border-bottom: 1px solid $light-brown;
     color: $light-brown;
-    transition-delay: 0.2s;
   }
 }
 

@@ -7,9 +7,12 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 // Images
 import like from "../../../assets/images/like.svg";
+import { Link } from "react-router-dom";
 export default class Responsive extends Component {
   render() {
     const posts = this.props.data;
+
+    const id = 1;
 
     var settings = {
       arrows: false,
@@ -56,7 +59,7 @@ export default class Responsive extends Component {
                 style={{
                   width: "300px",
                   height: "300px",
-                  backgroundImage: `url(${post.img})`,
+                  backgroundImage: `url(${post.cover})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundSize: "cover",
@@ -72,7 +75,9 @@ export default class Responsive extends Component {
                   <img src={like} alt="" className={styled.itemIcon} />
                 </div>
                 <div className={styled.itemButtom}>
-                  <button className={styled.button}>Подробнее</button>
+                  <Link to={`${id}`} className={styled.button}>
+                    Подробнее
+                  </Link>
                 </div>
               </div>
             </div>

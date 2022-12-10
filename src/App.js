@@ -14,6 +14,7 @@ import Registration from "./components/Registration/Registration";
 import NotFound from "./pages/NotFound";
 import Map from "./pages/Map/Map";
 import MapLayout from "./pages/Map/MapLayout";
+import ToursItem from "./components/posts/PostPlaces/PostPlacesTours/ToursItem/ToursItem";
 
 function App() {
   useEffect(() => {
@@ -34,11 +35,13 @@ function App() {
         <Route path="articles" element={<Article />} />
         <Route path="places/*" element={<Places />}>
           <Route path="tours" element={<PostPlacesTours />} />
+          <Route path="tours/:id" element={<ToursItem />} />
           <Route path="hotels" element={<PostPlacesHotels />} />
           <Route path="restaurants" element={<PostPlacesRestaurants />} />
         </Route>
         <Route path="blog" element={<Blog />} />
       </Route>
+      {/* <Route path="details/:id" element={<ToursItem />} /> */}
       <Route path="/map" element={<MapLayout />}>
         <Route index element={<Map />} />
       </Route>

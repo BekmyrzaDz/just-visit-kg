@@ -11,6 +11,7 @@ import Filter from "../Filter/Filter";
 // Context
 import { Context } from "../PostPlaces";
 import { Container } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const PostPlacesTours = () => {
   const props = useContext(Context);
@@ -34,22 +35,28 @@ const PostPlacesTours = () => {
         </Container>
       </section>
       <section>
-        <Container maxWidth="1240px">
+        <Container
+          maxWidth="1225px"
+          sx={{
+            nargin: "0 auto",
+          }}
+        >
           <h3 className={styled.title}>Интересные места:</h3>
-          <Grid container spacing={{ sx: 2, sm: 4, md: 6 }}>
+          <Grid container spacing={{ sx: 2, sm: 6, md: 9 }}>
             {interestsPlaces.map((post, i) => (
               <Grid item key={i}>
                 <div
                   style={{
                     width: "233px",
                     height: "233px",
-                    backgroundImage: `url(${post.img})`,
+                    backgroundImage: `url(${post.cover})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     borderRadius: "5px",
                     display: "flex",
                     flexDirection: "column",
+                    justifyItems: "center",
                     justifyContent: "space-between",
                     paddingTop: "5px",
                   }}
@@ -59,7 +66,7 @@ const PostPlacesTours = () => {
                     <img src={like} alt="" className={styled.itemIcon} />
                   </div>
                   <div className={styled.itemButtom}>
-                    <button className={styled.button}>Подробнее</button>
+                    <Link className={styled.button}>Подробнее</Link>
                   </div>
                 </div>
               </Grid>

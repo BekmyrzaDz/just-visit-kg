@@ -79,9 +79,18 @@
   background: #1e2431;
   border: none;
   border-radius: 5px;
+  padding: 5px 15px;
+  text-decoration: none;
+  -webkit-transition: color 0.2s 0.02s easy;
+  transition: color 0.2s 0.02s easy;
   position: absolute;
   right: 44px;
   bottom: 30px;
   cursor: pointer;
+}
+
+.button:hover {
+  color: #1e2431;
+  background: #d8ad83;
 }
 /*# sourceMappingURL=PostPlacesTours.module.css.map */
