@@ -9,6 +9,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import ImageSlider from "../ImageSlider/ImageSlider";
+import { createArticles } from "../../../api";
 
 const PostArticle = ({ data }) => {
   const containerStyles = {
@@ -17,8 +18,15 @@ const PostArticle = ({ data }) => {
     marginBottom: "35px",
   };
 
+  const article = {
+    title: "Почему любят Ыссык-куль?",
+    description:
+      "Лазурный Иссык-Куль - краса и гордость киргизской земли, величественно раскинулся между двумя хребтами - Кунгей Алатау и Терскей Алатау. Несколько тысяч лет назад этих Озеро Иссык",
+  };
+
   return (
     <>
+      <button onClick={() => createArticles(article)}>Click</button>
       {data.map((post, i) => (
         <Box
           sx={{

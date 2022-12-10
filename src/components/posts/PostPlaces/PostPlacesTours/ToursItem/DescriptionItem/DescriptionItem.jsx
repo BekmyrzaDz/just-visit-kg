@@ -34,7 +34,7 @@ const DescriptionItem = () => {
                   position: "relative",
                 }}
               >
-                <span className={styled.onBack} onClick={() => navigate(-1)}>
+                <span className={styled.goBack} onClick={() => navigate(-1)}>
                   Назад
                 </span>
                 <h3 className={styled.title}>{place.title}</h3>
