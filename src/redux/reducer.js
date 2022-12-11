@@ -6,7 +6,11 @@ const initialState = {
   error: null,
 };
 
-let user = null;
+let user;
+
+export const postToken = async () => {
+  return await user;
+};
 
 export const counterSlice = createSlice({
   name: "store",
@@ -15,16 +19,12 @@ export const counterSlice = createSlice({
     setProfile: (state, action) => {
       state.profile = action.payload;
       // console.log(state.profile);
-      user = state.profile.user;
+      user = state.profile.user.access_token;
       console.log(user);
-      postToken();
+      // postToken();
     },
   },
 });
-
-export const postToken = async () => {
-  return await user;
-};
 
 export const { setProfile } = counterSlice.actions;
 
