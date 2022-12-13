@@ -7,36 +7,55 @@ import styled from "./PostBlog.module.css";
 import { Link } from "react-router-dom";
 // components
 import ImageSlider from "../ImageSlider/ImageSlider";
-import { getBlogs, getTrevelers } from "../../../api/api";
+// import { getBlogs, getTrevelers } from "../../../api/api";
 import { useEffect, useState } from "react";
+import { getBlogs, getTrevelers } from "../../../services/blogService";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchBlogComments,
+  fetchBlogs,
+  fetchTrevelers,
+} from "../../../redux/features/blog/blogAction";
 
 const PostBlog = ({ blogData }) => {
+  const dispatch = useDispatch();
+  const blogs = useSelector((state) => state.blog);
+  console.log(blogs);
+
   const [blogState, setBlogState] = useState();
   const [trevelersState, setTrevelersState] = useState();
+
   const containerStyles = {
     width: "504px",
     height: "280px",
     marginBottom: "35px",
   };
 
-  const blog = {
-    data: getBlogs(),
-  };
-  const trevelers = {
-    data: getTrevelers(),
-  };
+  // const blog = {
+  //   data: getBlogs(),
+  // };
+  // const trevelers = {
+  //   data: getTrevelers(),
+  // };
 
-  useEffect(() => {
-    setBlogState(blog);
-    setTrevelersState(trevelers);
-  }, []);
+  // useEffect(() => {
+  //   setBlogState(blog);
+  //   setTrevelersState(trevelers);
+  // }, []);
 
   // console.log(getBlogs());
   // console.log(getTrevelers());
   // console.log(blogState.data);
   // console.log(trevelersState);
-  console.log(blog.data);
-  console.log(trevelers.data);
+
+  // console.log(blog.data);
+  // console.log(trevelers.data);
+
+  useEffect(() => {
+    dispatch(fetchBlogs());
+    dispatch(fetchBlogComments());
+    dispatch(fetchTrevelers());
+  }, [dispatch]);
 
   return (
     <>

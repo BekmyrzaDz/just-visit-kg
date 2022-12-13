@@ -21,8 +21,10 @@ export const counterSlice = createSlice({
       // console.log(state.profile);
       user = state.profile.user.access_token;
       console.log(user);
+      console.log(state);
       // postToken();
     },
+    setBlog: (state, action) => {},
   },
 });
 
