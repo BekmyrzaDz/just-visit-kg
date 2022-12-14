@@ -10,7 +10,7 @@
   }
   &Left {
     width: 641px;
-    & > .author {
+    & .author {
       display: flex;
       align-items: center;
       & .name {
@@ -31,7 +31,7 @@
         color: $border-gray;
       }
     }
-    & > .title {
+    & .title {
       font-family: Oswald;
       font-weight: 600;
       font-size: 25px;
@@ -39,7 +39,7 @@
       color: $white;
       margin-bottom: 15px;
     }
-    & > .description {
+    & .description {
       font-family: Martel Sans;
       font-weight: 400;
       font-size: 20px;

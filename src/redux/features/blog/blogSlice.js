@@ -1,10 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBlogComments, fetchBlogs, fetchTrevelers } from "./blogAction";
+import {
+  fetchBlogCommentById,
+  fetchBlogComments,
+  fetchBlogs,
+  fetchTrevelerById,
+  fetchTrevelers,
+} from "./blogAction";
 
 const initialState = {
   isLoading: null,
   isSuccess: null,
   message: null,
+  error: null,
   blogs: {},
 };
 
@@ -22,11 +29,26 @@ export const blogSlice = createSlice({
       state.blogs.blog = action.payload;
       state.isSuccess = true;
     },
-    [fetchBlogs.rejected]: (state) => {
+    [fetchBlogs.rejected]: (state, action) => {
       state.isLoading = false;
-      state.blogs.blog = null;
       state.isSuccess = false;
+      state.error = action.payload;
     },
+
+    // [fetchBlogCommentById.pending]: (state) => {
+    //   state.isLoading = true;
+    // },
+    // [fetchBlogCommentById.fulfilled]: (state, action) => {
+    //   state.isLoading = false;
+    //   state.message = "success";
+    //   state.blogs.map((item) => (item.comment = action.payload));
+    //   state.isSuccess = true;
+    // },
+    // [fetchBlogCommentById.rejected]: (state) => {
+    //   state.isLoading = false;
+    //   state.blogs.map((item) => (item.comment = null));
+    //   state.isSuccess = false;
+    // },
     [fetchBlogComments.pending]: (state) => {
       state.isLoading = true;
     },
@@ -36,11 +58,26 @@ export const blogSlice = createSlice({
       state.blogs.comments = action.payload;
       state.isSuccess = true;
     },
-    [fetchBlogComments.rejected]: (state) => {
+    [fetchBlogComments.rejected]: (state, action) => {
       state.isLoading = false;
-      state.blogs.comments = null;
       state.isSuccess = false;
+      state.error = action.payload;
     },
+
+    // [fetchTrevelerById.pending]: (state) => {
+    //   state.isLoading = true;
+    // },
+    // [fetchTrevelerById.fulfilled]: (state, action) => {
+    //   state.isLoading = false;
+    //   state.message = "success";
+    //   state.blogs.map((item) => (item.treveler = action.payload));
+    //   state.isSuccess = true;
+    // },
+    // [fetchTrevelerById.rejected]: (state) => {
+    //   state.isLoading = false;
+    //   state.blogs.map((item) => (item.treveler = null));
+    //   state.isSuccess = false;
+    // },
     [fetchTrevelers.pending]: (state) => {
       state.isLoading = true;
     },
@@ -50,10 +87,10 @@ export const blogSlice = createSlice({
       state.blogs.trevelers = action.payload;
       state.isSuccess = true;
     },
-    [fetchTrevelers.rejected]: (state) => {
+    [fetchTrevelers.rejected]: (state, action) => {
       state.isLoading = false;
-      state.blogs.trevelers = null;
       state.isSuccess = false;
+      state.error = action.payload;
     },
   },
 });

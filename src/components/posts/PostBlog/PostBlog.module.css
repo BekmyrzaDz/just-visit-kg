@@ -19,7 +19,7 @@
   width: 641px;
 }
 
-.blogLeft > .author {
+.blogLeft .author {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +28,7 @@
           align-items: center;
 }
 
-.blogLeft > .author .name {
+.blogLeft .author .name {
   font-family: "Martel Sans";
   font-style: normal;
   font-weight: 400;
@@ -38,7 +38,7 @@
   margin: 0 10px 0;
 }
 
-.blogLeft > .author .date {
+.blogLeft .author .date {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -47,7 +47,7 @@
   color: rgba(255, 255, 255, 0.3);
 }
 
-.blogLeft > .title {
+.blogLeft .title {
   font-family: Oswald;
   font-weight: 600;
   font-size: 25px;
@@ -56,7 +56,7 @@
   margin-bottom: 15px;
 }
 
-.blogLeft > .description {
+.blogLeft .description {
   font-family: Martel Sans;
   font-weight: 400;
   font-size: 20px;
