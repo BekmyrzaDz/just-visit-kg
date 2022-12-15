@@ -42,66 +42,9 @@ const PostBlog = ({ blogData }) => {
 
   return (
     <>
-      {/* {blogs.isLoading ? <h2>Loading...</h2> : false}
-      {blogs.error && <h2>An error occered: {blogs.error}</h2>} */}
-      {/* {blogData.map((post, i) => (
-          <div className={styled.blog} key={i}>
-            <Container maxWidth="1240px">
-              <div className={styled.blogInner}>
-                <Box className={styled.blogLeft}>
-                  <Box className={styled.author}>
-                    <Box
-                      sx={{
-                        width: "100px",
-                        height: "100px",
-                        borderRadius: "50%",
-                        background: `url(${post.author.image})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                        marginBottom: "15px",
-                      }}
-                    ></Box>
-                    <Box>
-                      <span className={styled.name}>
-                        {post.author.firstName} {post.author.lastName}
-                      </span>
-                      <span className={styled.date}>{post.author.date}</span>
-                    </Box>
-                  </Box>
-                  <Typography variant="h2" className={styled.title}>
-                    {post.title}
-                  </Typography>
-                  <Typography className={styled.description}>
-                    {post.description}
-                  </Typography>
-                  <Box>
-                    <Link
-                      to="/news"
-                      style={{
-                        fontFamily: "Matrial Sans",
-                        fontWeight: "400",
-                        padding: "10px 20px",
-                        textDecoration: "none",
-                        borderRadius: "20px",
-                        background: "var(--light-brown)",
-                        color: "var(--black)",
-                        fontSize: "16px",
-                      }}
-                    >
-                      Развернуть
-                    </Link>
-                  </Box>
-                </Box>
-                <Box className={styled.blogRight}>
-                  <Box sx={containerStyles}>
-                    <ImageSlider slides={post.images} />
-                  </Box>
-                </Box>
-              </div>
-            </Container>
-          </div>
-        ))} */}
+      {blogs.isLoading ? <h2>Loading...</h2> : null}
+      {blogs.error && <h2>An error occered: {blogs.error}</h2>}
+
       {blogs.blog?.map((post, i) => (
         <div className={styled.blog} key={i}>
           <Container maxWidth="1240px">
@@ -140,7 +83,7 @@ const PostBlog = ({ blogData }) => {
                   ?.filter((item) => item.blog === post.id)
                   .map((comment, i) => (
                     <Box key={i}>
-                      {comment.text.length < 330 ? (
+                      {comment.text.length > 330 ? (
                         <Box>
                           <Box>
                             <Typography className={styled.description}>
