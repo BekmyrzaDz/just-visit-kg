@@ -10,7 +10,7 @@ import Logout from "../GoogleLogin/Logout";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import userIcon from "../../assets/images/UserIcon.svg";
-import "./UserIcon.css";
+import styled from "./UserIcon.module.scss";
 
 const UserIcon = () => {
   const { profile } = useSelector((state) => state.user);
@@ -30,7 +30,7 @@ const UserIcon = () => {
       <Tooltip title="Main-Logo">
         <Button
           //profile.user.avatar? "": "noAvatar"
-          className={"noAvatar"}
+          className={styled.noAvatar}
           sx={{
             width: "63px",
             height: "63px",
