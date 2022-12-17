@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Layout.module.css";
+import styles from "./Layout.module.scss";
 import { Container, Typography } from "@mui/material";
 import Header from "./Header/Header";
 import { NavLink, Outlet } from "react-router-dom";
@@ -63,11 +63,9 @@ const Layout = () => {
             </Box>
           </Box>
         </Container>
-        {/* <Container maxWidth="1240px"> */}
         <Box sx={{ paddingBottom: "50px" }}>
           <Outlet />
         </Box>
-        {/* </Container> */}
       </main>
     </>
   );
