@@ -3,7 +3,6 @@ import { api } from "../api/api";
 export const getBlogs = async () => {
   try {
     const { data } = await api.get("blogs/");
-    console.log(data);
 
     return data;
   } catch (err) {
@@ -14,7 +13,6 @@ export const getBlogs = async () => {
 export const getBlogComments = async () => {
   try {
     const { data } = await api.get("blogs/comment/");
-    console.log(data);
 
     return data;
   } catch (err) {
@@ -36,7 +34,6 @@ export const getBlogCommentById = async ({ id }) => {
 export const getTrevelers = async () => {
   try {
     const { data } = await api.get("moderation/travelers/");
-    console.log(data);
 
     return data;
   } catch (err) {
