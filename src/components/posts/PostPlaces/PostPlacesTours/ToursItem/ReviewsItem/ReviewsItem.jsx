@@ -1,5 +1,5 @@
 // styles
-import styled from "./ReviewsItem.module.css";
+import styled from "./ReviewsItem.module.scss";
 // context
 import { useContext } from "react";
 import { Context } from "../../../PostPlaces";

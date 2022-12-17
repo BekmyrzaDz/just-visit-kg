@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./reducer"
+import blogs from "./features/blog/blogSlice";
+import reducer from "./reducer";
 
 export const store = configureStore({
-    reducer: {
-        user: reducer
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: false,
-        }),
-})
+  reducer: {
+    user: reducer,
+    blog: blogs,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});

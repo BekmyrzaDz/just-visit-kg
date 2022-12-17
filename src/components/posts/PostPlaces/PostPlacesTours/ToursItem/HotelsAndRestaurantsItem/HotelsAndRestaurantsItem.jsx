@@ -1,5 +1,5 @@
 // styles
-import styled from "./HotelsAndRestaurantsItem.module.css";
+import styled from "./HotelsAndRestaurantsItem.module.scss";
 // context
 import { useContext } from "react";
 import { Context } from "../../../PostPlaces";

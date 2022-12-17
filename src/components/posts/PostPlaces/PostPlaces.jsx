@@ -1,7 +1,7 @@
 import React, { createContext, useEffect } from "react";
 // Styles
 import "../../../index.css";
-import styled from "./PostPlaces.module.css";
+import styled from "./PostPlaces.module.scss";
 // MUI components
 import { Box } from "@mui/system";
 // Router components
