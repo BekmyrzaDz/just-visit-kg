@@ -21,7 +21,7 @@ const PostArticle = ({ data }) => {
 
   return (
     <>
-      <button onClick={() => createArticle(article)}>Click</button>
+      {/* <button onClick={() => createArticle(article)}>Click</button> */}
       {data.map((post, i) => (
         <Box
           sx={{
