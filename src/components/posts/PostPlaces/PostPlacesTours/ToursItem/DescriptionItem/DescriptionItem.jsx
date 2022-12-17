@@ -4,7 +4,7 @@ import { Box, Container } from "@mui/system";
 // components
 import ImageSlider from "../../../../ImageSlider/ImageSlider";
 // styles
-import styled from "./DescriptionItem.module.css";
+import styled from "./DescriptionItem.module.scss";
 // context
 import { Context } from "../../../PostPlaces";
 import { useContext } from "react";

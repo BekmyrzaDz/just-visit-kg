@@ -1,15 +1,10 @@
 import React from "react";
 import "../../../index.css";
-// import issyKyl1 from "../../assets/images/issyk-kul-1.jpg";
-// import issyKyl2 from "../../assets/images/issyk-kul-2.jpg";
-// import issyKyl3 from "../../assets/images/issyk-kul-3.jpg";
-// import issyKyl4 from "../../assets/images/issyk-kul-4.jpg";
-// import issyKyl5 from "../../assets/images/issyk-kul-5.jpg";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import ImageSlider from "../ImageSlider/ImageSlider";
-import { createArticle } from "../../../api/api";
+import { createArticle } from "../../../services/articleService";
 
 const PostArticle = ({ data }) => {
   const containerStyles = {

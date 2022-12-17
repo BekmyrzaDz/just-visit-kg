@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 // mui
 import { Grid } from "@mui/material";
 // styles
-import styled from "./PostPlacesRestaurants.module.css";
+import styled from "./PostPlacesRestaurants.module.scss";
 import "../../../../styles/variables.scss";
 // images
 import hotel from "../../../../assets/images/hotel1.jpg";

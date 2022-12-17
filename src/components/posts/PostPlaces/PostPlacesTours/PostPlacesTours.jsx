@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 // MUI components
 import { Grid } from "@mui/material";
 // Styles
-import styled from "./PostPlacesTours.module.css";
+import styled from "./PostPlacesTours.module.scss";
 // Images
 import like from "../../../../assets/images/like.svg";
 // Components
