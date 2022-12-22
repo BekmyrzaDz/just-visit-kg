@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "../../../index.css";
 import { Box } from "@mui/system";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ImageSlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +22,7 @@ const ImageSlider = ({ slides }) => {
     marginBottom: "10px",
     backgroundPosition: "center",
     backgroundSize: "cover",
-    backgroundImage: `url(${slides[currentIndex].url})`,
+    backgroundImage: `url(${slides[currentIndex].picture})`,
     transition: "all 10ms ease 300ms",
   };
 
@@ -80,10 +85,12 @@ const ImageSlider = ({ slides }) => {
   return (
     <Box sx={sliderStyles}>
       <Box sx={leftArrowStyles} onClick={goToPrevios}>
-        ❰
+        {/* ❰ */}
+        <FontAwesomeIcon icon={faChevronLeft} />
       </Box>
       <Box sx={rightArrowStyles} onClick={goToNext}>
-        ❱
+        {/* ❱ */}
+        <FontAwesomeIcon icon={faChevronRight} />
       </Box>
       <Box sx={slideStyles}></Box>
       <Box sx={dotsContainerStyles}>

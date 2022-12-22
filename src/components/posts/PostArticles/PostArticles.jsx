@@ -1,12 +1,38 @@
+// modules
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// styles
 import "../../../index.css";
-import { Typography } from "@mui/material";
+import styled from "./PostArticles.module.scss";
+// mui
+import { CircularProgress, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+// router
 import { Link } from "react-router-dom";
+// components
 import ImageSlider from "../ImageSlider/ImageSlider";
-import { createArticle } from "../../../services/articleService";
+import { fetchArticles } from "../../../redux/features/article/articleAction";
+// images
+import emptyImg from "../../../assets/images/empty-image.webp";
 
 const PostArticle = ({ data }) => {
+  const { articles, isLoading } = useSelector((store) => store.article);
+  const dispatch = useDispatch();
+  // console.log(articles);
+
+  useEffect(() => {
+    dispatch(fetchArticles());
+  }, [dispatch]);
+
+  const images = [
+    { picture: emptyImg },
+    { picture: emptyImg },
+    { picture: emptyImg },
+    { picture: emptyImg },
+    { picture: emptyImg },
+  ];
+
   const containerStyles = {
     width: "592px",
     height: "280px",
@@ -22,62 +48,51 @@ const PostArticle = ({ data }) => {
   return (
     <>
       {/* <button onClick={() => createArticle(article)}>Click</button> */}
-      {data.map((post, i) => (
+      {isLoading ? (
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            marginBottom: "42px",
+            justifyContent: "center",
           }}
-          key={i}
         >
-          <Typography
-            variant="h2"
-            sx={{
-              fontFamily: "Oswald",
-              fontWeight: 600,
-              fontSize: "25px",
-              lineHeight: "37.05px",
-              color: "var(--white)",
-              marginBottom: "20px",
-            }}
-          >
-            {post.title}
-          </Typography>
-          <Box sx={containerStyles}>
-            <ImageSlider slides={post.images} />
-          </Box>
-          <Typography
-            sx={{
-              fontFamily: "Matrial Sans",
-              fontWeight: "400",
-              fontSize: "20px",
-              color: "#fff",
-              marginBottom: "20px",
-            }}
-          >
-            {post.description}
-          </Typography>
-          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <Link
-              to="/articles"
-              style={{
-                fontFamily: "Material Sans",
-                fontWeight: "400",
-                padding: "10px 20px",
-                textDecoration: "none",
-                borderRadius: "20px",
-                background: "var(--light-brown)",
-                color: "var(--black)",
-                fontSize: "16px",
-              }}
-            >
-              Развернуть
-            </Link>
-          </Box>
+          <CircularProgress />
         </Box>
-      ))}
+      ) : (
+        <>
+          {articles.map((post, i) => (
+            <Box className={styled.article} key={i}>
+              <Typography variant="h2" className={styled.title}>
+                {post.title}
+              </Typography>
+              <Box sx={containerStyles}>
+                <ImageSlider slides={post.image || images} />
+              </Box>
+              {post.text?.length > 330 ? (
+                <Box>
+                  <Box>
+                    <Typography className={styled.description}>
+                      {post.description.slice(0, 330) + `...`}
+                    </Typography>
+                  </Box>
+                  <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                    <Link to="/articles" className={styled.button}>
+                      Развернуть
+                    </Link>
+                  </Box>
+                </Box>
+              ) : (
+                <Box>
+                  <Typography className={styled.description}>
+                    {post.description}
+                  </Typography>
+                </Box>
+              )}
+            </Box>
+          ))}
+        </>
+      )}
     </>
   );
 };
+
 export default PostArticle;

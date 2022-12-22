@@ -1,0 +1,32 @@
+@import "../../../styles/variables.scss";
+
+.article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 42px;
+  & > .title {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 37.05px;
+    color: $white;
+    margin-bottom: 20px;
+  }
+  & .description {
+    font-family: Martel Sans;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    margin: 10px 0 20px 0;
+  }
+  & .button {
+    font-family: Martel Sans;
+    font-weight: 400;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    background: $light-brown;
+    color: $black;
+    font-size: 16px;
+  }
+}

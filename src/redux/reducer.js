@@ -14,6 +14,13 @@ export const counterSlice = createSlice({
       state.profile = action.payload;
       state.status = !!action.payload;
       console.log(action.payload);
+
+      const token = {
+        access: state.profile.user.access_token,
+        refresh: state.profile.user.refresh_token,
+      };
+
+      localStorage.setItem("token", JSON.stringify(token));
     },
   },
 });

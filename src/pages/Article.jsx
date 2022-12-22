@@ -46,11 +46,11 @@ const Article = () => {
     {
       title: "Почему любят Ыссык-куль?",
       images: [
-        { url: issyKyl1 },
-        { url: issyKyl2 },
-        { url: issyKyl3 },
-        { url: issyKyl4 },
-        { url: issyKyl5 },
+        { picture: issyKyl1 },
+        { picture: issyKyl2 },
+        { picture: issyKyl3 },
+        { picture: issyKyl4 },
+        { picture: issyKyl5 },
       ],
       description:
         "Лазурный Иссык-Куль - краса и гордость киргизской земли, величественно раскинулся между двумя хребтами - Кунгей Алатау и Терскей Алатау. Несколько тысяч лет назад этих Озеро Иссык",
@@ -58,11 +58,11 @@ const Article = () => {
     {
       title: "Ущелье Ак-Тюз. Интересные факты",
       images: [
-        { url: akTuz1 },
-        { url: issyKyl2 },
-        { url: issyKyl3 },
-        { url: issyKyl4 },
-        { url: issyKyl5 },
+        { picture: akTuz1 },
+        { picture: issyKyl2 },
+        { picture: issyKyl3 },
+        { picture: issyKyl4 },
+        { picture: issyKyl5 },
       ],
       description:
         "Ущелье и поселок  Ак-Тюз находится в 137 км от Бишкека на высоте 2,300 м над уровнем моря В переводе  Ак-Тюз означает «белая долина», и это связано с тем, что склоны ущелья имеют",
@@ -70,11 +70,11 @@ const Article = () => {
     {
       title: "Озеро Кель-Суу",
       images: [
-        { url: kelSuu1 },
-        { url: issyKyl2 },
-        { url: issyKyl3 },
-        { url: issyKyl4 },
-        { url: issyKyl5 },
+        { picture: kelSuu1 },
+        { picture: issyKyl2 },
+        { picture: issyKyl3 },
+        { picture: issyKyl4 },
+        { picture: issyKyl5 },
       ],
       description:
         "В высокогорной местности недалеко от границы с Китаем есть красивейшее озеро. Чтобы попасть туда, нужно четыре часа ехать на машине из Нарына. Название озера переводится как....",
@@ -82,11 +82,11 @@ const Article = () => {
     {
       title: "Арсланбоб. Одно из крупнейших ореховых лесов",
       images: [
-        { url: arslanBob1 },
-        { url: issyKyl2 },
-        { url: issyKyl3 },
-        { url: issyKyl4 },
-        { url: issyKyl5 },
+        { picture: arslanBob1 },
+        { picture: issyKyl2 },
+        { picture: issyKyl3 },
+        { picture: issyKyl4 },
+        { picture: issyKyl5 },
       ],
       description:
         "Один из крупнейших ореховых лесов в мире. Впервые заинтересовал поселенцев в III веке до нашей эры, а сегодня привлекает тысячи туристов из разных стран....",

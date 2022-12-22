@@ -3,6 +3,9 @@ import axios from "axios";
 
 // const nameFromCookie = Cookies.get("Token");
 // console.log(nameFromCookie);
+// process.env.REACT_APP_BASE_URL
+
+// const baseURL = "http://just-visit.herokuapp.com/";
 
 export const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
