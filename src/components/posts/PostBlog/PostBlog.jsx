@@ -25,6 +25,7 @@ import emptyImg from "../../../assets/images/empty-image.webp";
 const PostBlog = ({ blogData }) => {
   const dispatch = useDispatch();
   const { blogs, isLoading } = useSelector((state) => state.blog);
+  const [isFullText, setIsFullText] = useState(false);
   console.log(blogs);
 
   const images = [
@@ -44,6 +45,10 @@ const PostBlog = ({ blogData }) => {
   useEffect(() => {
     dispatch(fetchBlogs());
   }, [dispatch]);
+
+  const setFullText = () => {
+    setIsFullText(!isFullText);
+  };
 
   return (
     <>
@@ -94,25 +99,18 @@ const PostBlog = ({ blogData }) => {
                         <Box>
                           <Box>
                             <Typography className={styled.description}>
-                              {post.text.slice(0, 330) + `...`}
+                              {isFullText
+                                ? post.text
+                                : post.text.slice(0, 330) + `...`}
                             </Typography>
                           </Box>
                           <Box>
-                            <Link
-                              to="/news"
-                              style={{
-                                fontFamily: "Matrial Sans",
-                                fontWeight: "400",
-                                padding: "10px 20px",
-                                textDecoration: "none",
-                                borderRadius: "20px",
-                                background: "var(--light-brown)",
-                                color: "var(--black)",
-                                fontSize: "16px",
-                              }}
+                            <button
+                              onClick={setFullText}
+                              className={styled.button}
                             >
-                              Развернуть
-                            </Link>
+                              {isFullText ? "Скрыть" : "Развернуть"}
+                            </button>
                           </Box>
                         </Box>
                       ) : (
