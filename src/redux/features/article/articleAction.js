@@ -6,7 +6,7 @@ export const fetchArticles = createAsyncThunk(
   async function () {
     try {
       const res = await getArticles();
-      console.log(res);
+      // console.log(res);
       return res;
     } catch (err) {
       throw new Error(err);

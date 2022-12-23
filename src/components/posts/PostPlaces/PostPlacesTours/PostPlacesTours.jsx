@@ -21,7 +21,7 @@ const PostPlacesTours = () => {
 
   return (
     <>
-      <Filter />
+      {/* <Filter /> */}
       <section>
         <Container maxWidth="1240px">
           <h3 className={`${styled.title} ${styled.margin}`}>Актуально</h3>
