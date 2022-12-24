@@ -22,7 +22,7 @@ const PostPlacesHotels = () => {
 
   const { places, isLoading } = useSelector((store) => store.place);
   const dispatch = useDispatch();
-  console.log(places);
+  // console.log(places);
 
   useEffect(() => {
     dispatch(fetchPlaces());

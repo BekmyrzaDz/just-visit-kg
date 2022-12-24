@@ -10,9 +10,8 @@ import like from "../../../assets/images/like.svg";
 import { Link } from "react-router-dom";
 export default class Responsive extends Component {
   render() {
-    const posts = this.props.data;
-
-    const id = 1;
+    const { data } = this.props;
+    console.log(data);
 
     var settings = {
       arrows: false,
@@ -53,13 +52,13 @@ export default class Responsive extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {posts.map((post, i) => (
+          {data?.map((post, i) => (
             <div key={i}>
               <div
                 style={{
                   width: "300px",
                   height: "300px",
-                  backgroundImage: `url(${post.cover})`,
+                  backgroundImage: `url(${post.image[1].picture})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundSize: "cover",
@@ -71,11 +70,15 @@ export default class Responsive extends Component {
                 }}
               >
                 <div className={styled.itemTop}>
-                  <span className={styled.itemTitle}>{post.title}</span>
+                  <span className={styled.itemTitle}>
+                    {post.name.length > 18
+                      ? post.name.slice(0, 18) + "..."
+                      : post.name}
+                  </span>
                   <img src={like} alt="" className={styled.itemIcon} />
                 </div>
                 <div className={styled.itemButtom}>
-                  <Link to={`${id}`} className={styled.button}>
+                  <Link to={`${post.id}`} className={styled.button}>
                     Подробнее
                   </Link>
                 </div>

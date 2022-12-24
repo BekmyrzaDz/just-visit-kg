@@ -12,12 +12,8 @@ const ToursItem = () => {
       <section style={sectionStyle}>
         <DescriptionItem />
       </section>
-      <section style={sectionStyle}>
-        <ReviewsItem />
-      </section>
-      <section>
-        <HotelsAndRestaurantsItem />
-      </section>
+      <section style={sectionStyle}>{/* <ReviewsItem /> */}</section>
+      <section>{/* <HotelsAndRestaurantsItem /> */}</section>
     </div>
   );
 };
