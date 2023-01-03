@@ -25,7 +25,7 @@ const PostPlacesTours = () => {
 
   const { tours, isLoading } = useSelector((store) => store.tour);
   const dispatch = useDispatch();
-  console.log(tours);
+  // console.log(tours);
 
   useEffect(() => {
     dispatch(fetchTours());
@@ -41,98 +41,115 @@ const PostPlacesTours = () => {
 
   return (
     <>
-      <Filter />
-      <section>
-        <Container maxWidth="1240px">
-          <h3 className={`${styled.title} ${styled.margin}`}>Актуально</h3>
-          {isLoading ? (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <CircularProgress />
-            </Box>
-          ) : (
-            <ImageCarousel data={actualFilter(tours)} />
-          )}
-        </Container>
-      </section>
-      <section>
-        <Container maxWidth="1240px">
-          <h3 className={`${styled.title} ${styled.margin}`}>Популярно</h3>
-          {isLoading ? (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <CircularProgress />
-            </Box>
-          ) : (
-            <ImageCarousel data={popularFilter(tours)} />
-          )}
-        </Container>
-      </section>
-      <section>
-        <Container
-          maxWidth="1225px"
+      {/* <Filter /> */}
+      {isLoading ? (
+        <Box
           sx={{
-            nargin: "0 auto",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          <h3 className={styled.title}>Интересные места:</h3>
-          <Grid container spacing={{ sx: 2, sm: 6, md: 9 }}>
-            {isLoading ? (
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <CircularProgress />
-              </Box>
-            ) : (
-              <>
-                {tours.map((post, i) => (
-                  <Grid item key={i}>
-                    <div
-                      style={{
-                        width: "233px",
-                        height: "233px",
-                        backgroundImage: `url(${post.image[1].picture})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                        borderRadius: "5px",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyItems: "center",
-                        justifyContent: "space-between",
-                        paddingTop: "5px",
-                      }}
-                    >
-                      <div className={styled.itemTop}>
-                        <span className={styled.itemTitle}>
-                          {post.name.length > 13
-                            ? post.name.slice(0, 13) + "..."
-                            : post.name}
-                        </span>
-                        <img src={like} alt="" className={styled.itemIcon} />
-                      </div>
-                      <div className={styled.itemButtom}>
-                        <Link className={styled.button}>Подробнее</Link>
-                      </div>
-                    </div>
-                  </Grid>
-                ))}
-              </>
-            )}
-          </Grid>
-        </Container>
-      </section>
+          <CircularProgress />
+        </Box>
+      ) : (
+        <>
+          <section>
+            <Container maxWidth="1240px">
+              <h3 className={`${styled.title} ${styled.margin}`}>Актуально</h3>
+              {isLoading ? (
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CircularProgress />
+                </Box>
+              ) : (
+                <ImageCarousel data={actualFilter(tours)} />
+              )}
+            </Container>
+          </section>
+          <section>
+            <Container maxWidth="1240px">
+              <h3 className={`${styled.title} ${styled.margin}`}>Популярно</h3>
+              {isLoading ? (
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CircularProgress />
+                </Box>
+              ) : (
+                <ImageCarousel data={popularFilter(tours)} />
+              )}
+            </Container>
+          </section>
+          <section>
+            <Container
+              maxWidth="1225px"
+              sx={{
+                nargin: "0 auto",
+              }}
+            >
+              <h3 className={styled.title}>Интересные места:</h3>
+              <Grid container spacing={{ sx: 2, sm: 6, md: 9 }}>
+                {isLoading ? (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <CircularProgress />
+                  </Box>
+                ) : (
+                  <>
+                    {tours.map((post, i) => (
+                      <Grid item key={i}>
+                        <div
+                          style={{
+                            width: "233px",
+                            height: "233px",
+                            backgroundImage: `url(${post.image[1].picture})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                            borderRadius: "5px",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyItems: "center",
+                            justifyContent: "space-between",
+                            paddingTop: "5px",
+                          }}
+                        >
+                          <div className={styled.itemTop}>
+                            <span className={styled.itemTitle}>
+                              {post.name.length > 13
+                                ? post.name.slice(0, 13) + "..."
+                                : post.name}
+                            </span>
+                            <img
+                              src={like}
+                              alt=""
+                              className={styled.itemIcon}
+                            />
+                          </div>
+                          <div className={styled.itemButtom}>
+                            <Link className={styled.button}>Подробнее</Link>
+                          </div>
+                        </div>
+                      </Grid>
+                    ))}
+                  </>
+                )}
+              </Grid>
+            </Container>
+          </section>
+        </>
+      )}
     </>
   );
 };

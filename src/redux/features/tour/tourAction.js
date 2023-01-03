@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getTourById, getTours } from "../../../services/tourService";
 
 export const fetchTours = createAsyncThunk(
-  "tour/fetchTours",
+  "tours/fetchTours",
   async function () {
     try {
       const res = await getTours();

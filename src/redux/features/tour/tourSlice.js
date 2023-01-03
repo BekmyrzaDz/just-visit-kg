@@ -6,8 +6,8 @@ const initialState = {
   isSuccess: null,
   message: null,
   error: null,
+  tour: null,
   tours: [],
-  tour: [],
 };
 
 export const tourSlice = createSlice({

@@ -3,7 +3,7 @@ import { api } from "../api/api";
 export const getTours = async () => {
   try {
     const { data } = await api.get("trips/direction/");
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (e) {
     throw new Error(e);
@@ -12,7 +12,8 @@ export const getTours = async () => {
 
 export const getTourById = async (id) => {
   try {
-    const { data } = await api.get(`trips/direction/${id}`);
+    console.log(id);
+    const data = await api.get(`trips/direction/${id}`);
     console.log(data);
     return data;
   } catch (e) {

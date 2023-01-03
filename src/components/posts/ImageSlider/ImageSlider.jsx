@@ -94,7 +94,7 @@ const ImageSlider = ({ slides }) => {
       </Box>
       <Box sx={slideStyles}></Box>
       <Box sx={dotsContainerStyles}>
-        {slides.map((slide, slideIndex) => (
+        {slides?.map((slide, slideIndex) => (
           <Box
             key={slideIndex}
             sx={currentIndex === slideIndex ? dotsActiveStyles : dotsStyles}
