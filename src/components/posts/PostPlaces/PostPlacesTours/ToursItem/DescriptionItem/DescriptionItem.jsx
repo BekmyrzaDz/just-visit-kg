@@ -10,10 +10,7 @@ import { Context } from "../../../PostPlaces";
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchTourById,
-  fetchTours,
-} from "../../../../../../redux/features/tour/tourAction";
+import { fetchTourById } from "../../../../../../redux/features/tour/tourAction";
 
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,11 +20,10 @@ const DescriptionItem = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
 
   const { actual } = props.Context._currentValue2.data.toursData;
 
-  const { tour, tours, isLoading } = useSelector((store) => store.tour);
+  const { tour, isLoading } = useSelector((store) => store.tour);
   const { data } = tour;
   console.log(data);
 
@@ -65,18 +61,18 @@ const DescriptionItem = () => {
                   <FontAwesomeIcon icon={faChevronLeft} />
                   Назад
                 </span>
-                <h3 className={styled.title}>{data.name}</h3>
+                <h3 className={styled.title}>{data?.name}</h3>
               </Box>
               <Grid container spacing={2} columns={16}>
                 <Grid item xs={6}>
                   <Box sx={containerStyles}>
-                    <ImageSlider slides={data.image} />
+                    <ImageSlider slides={data?.image} />
                   </Box>
                 </Grid>
                 <Grid item xs={10}>
                   <Box className={styled.descr}>
                     <Typography className={styled.description}>
-                      {data.description}
+                      {data?.description}
                     </Typography>
                   </Box>
                 </Grid>
